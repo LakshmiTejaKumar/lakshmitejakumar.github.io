@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Lakshmi Teja Kumar S | Portfolio</title>
+<title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
 
 <style>
 :root {
@@ -11,7 +11,7 @@
   --dark: #0f172a;
   --text: #334155;
   --bg: #f8fafc;
-  --panel: #ffffff;
+  --white: #ffffff;
 }
 
 * {
@@ -27,16 +27,15 @@ body {
   overflow: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   height: 64px;
-  background: #fff;
+  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 10;
+  padding: 0 56px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .brand {
@@ -48,8 +47,8 @@ header {
 }
 
 .brand img {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -57,13 +56,13 @@ header {
 nav a {
   margin-left: 28px;
   text-decoration: none;
-  font-weight: 500;
   color: var(--text);
+  font-weight: 500;
   cursor: pointer;
 }
 
 nav a.resume {
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
   border: 2px solid var(--primary);
   color: var(--primary);
@@ -73,13 +72,12 @@ nav a:hover {
   color: var(--primary);
 }
 
-/* MAIN LAYOUT */
+/* ================= LAYOUT ================= */
 .app {
   display: flex;
   height: calc(100vh - 64px);
 }
 
-/* CONTENT PANEL */
 .content {
   flex: 1;
   position: relative;
@@ -89,9 +87,9 @@ nav a:hover {
 .section {
   position: absolute;
   inset: 0;
-  padding: 60px;
+  padding: 64px;
   overflow-y: auto;
-  background: var(--panel);
+  background: var(--white);
   opacity: 0;
   transform: translateX(60px);
   transition: all 0.5s ease;
@@ -103,7 +101,7 @@ nav a:hover {
   z-index: 2;
 }
 
-/* IMAGE PANEL */
+/* ================= IMAGE PANEL ================= */
 .visual {
   width: 38%;
   position: relative;
@@ -111,14 +109,15 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .visual::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: center / 300px no-repeat;
+  background-size: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
   opacity: 0.06;
   transition: background-image 0.5s ease;
 }
@@ -127,29 +126,38 @@ nav a:hover {
   width: 360px;
   height: 460px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 22px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-  z-index: 2;
+  z-index: 1;
 }
 
-/* HOME */
+/* ================= HOME ================= */
+.home span {
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 .home h1 {
   font-size: 48px;
+  margin-top: 12px;
   color: var(--dark);
 }
 
-.home h1 span {
+.home h2 {
+  margin-top: 12px;
+  font-size: 26px;
   color: var(--primary);
 }
 
 .home p {
-  margin: 20px 0 30px;
-  max-width: 520px;
+  margin: 24px 0 36px;
+  max-width: 560px;
+  line-height: 1.7;
 }
 
 .btn {
-  display: inline-block;
-  padding: 14px 26px;
+  padding: 14px 28px;
   border-radius: 30px;
   background: var(--primary);
   color: #fff;
@@ -158,7 +166,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* EXPERIENCE */
+/* ================= EXPERIENCE ================= */
 .timeline {
   display: flex;
 }
@@ -169,9 +177,8 @@ nav a:hover {
 }
 
 .station {
-  padding: 20px 0;
+  padding: 18px 0;
   cursor: pointer;
-  position: relative;
 }
 
 .station span {
@@ -186,33 +193,30 @@ nav a:hover {
 
 .marker {
   position: absolute;
-  left: -34px;
-  width: 26px;
-  height: 26px;
+  left: -42px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD") center/cover no-repeat;
+  background: url("sources/avatar.jpg") center/cover no-repeat;
   transition: top 0.4s ease;
 }
 
 .exp-details {
-  padding-left: 60px;
+  padding-left: 64px;
   max-width: 600px;
 }
 
-/* RESUME */
+/* ================= RESUME ================= */
 .resume-frame {
   width: 100%;
   height: 80%;
   border: none;
-}
-
-.download {
   margin-top: 20px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact p {
-  margin: 12px 0;
+  margin: 14px 0;
 }
 </style>
 </head>
@@ -221,7 +225,7 @@ nav a:hover {
 
 <header>
   <div class="brand">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD" alt="Avatar">
+    <img src="sources/avatar.jpg" alt="Avatar">
     Lakshmi Teja Kumar
   </div>
 
@@ -238,21 +242,32 @@ nav a:hover {
 
 <div class="app">
 
-  <!-- CONTENT -->
   <div class="content">
 
+    <!-- HOME -->
     <section id="home" class="section home active">
-      <span style="color:var(--primary);font-weight:600;">WELCOME</span>
-      <h1>Hi, I'm <span>Lakshmi Teja</span></h1>
-      <p>Data Analyst & Power BI Developer with enterprise experience delivering KPI-driven insights and decision-ready dashboards.</p>
+      <span>WELCOME</span>
+      <h1>Hi, I'm Lakshmi Teja Kumar</h1>
+      <h2>Data Analyst & Power BI Developer</h2>
+      <p>
+        Enterprise Data Analyst with 4+ years of experience delivering
+        scalable BI solutions, KPI-driven dashboards, and decision-support
+        systems using Power BI, SQL, and data modeling.
+      </p>
       <a class="btn" onclick="show('contact')">Contact Me</a>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
       <h2>About Me</h2>
-      <p>Professional summary will be filled here.</p>
+      <p>
+        I am a Power BI Developer and Data Analyst with hands-on experience
+        in building enterprise dashboards, integrating multi-source data,
+        and transforming complex datasets into actionable insights.
+      </p>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <h2>Experience</h2>
 
@@ -260,12 +275,12 @@ nav a:hover {
         <div class="stations">
           <div class="marker" id="marker"></div>
 
-          <div class="station" onclick="selectExp(0, 'niq')">
+          <div class="station" onclick="selectExp(0)">
             <span>NIQ</span>
             <small>May 2024 – Present</small>
           </div>
 
-          <div class="station" onclick="selectExp(1, 'more')">
+          <div class="station" onclick="selectExp(1)">
             <span>MORE Retail Pvt Ltd</span>
             <small>Oct 2021 – Aug 2022</small>
           </div>
@@ -273,46 +288,52 @@ nav a:hover {
 
         <div class="exp-details" id="exp-details">
           <h3>NIQ – Data Analyst</h3>
-          <p>Responsibilities and impact details go here.</p>
+          <p>
+            Working on enterprise analytics solutions, building Power BI
+            dashboards, optimizing data models, and supporting business
+            stakeholders with actionable insights.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <p>Dashboard projects will be added here.</p>
+      <p>Dashboard projects will be showcased here.</p>
     </section>
 
+    <!-- EDUCATION -->
     <section id="education" class="section">
       <h2>Education</h2>
-      <p>Education details here.</p>
+      <p>Education details will be added here.</p>
     </section>
 
+    <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section">
       <h2>Achievements</h2>
-      <p>Awards and recognitions here.</p>
+      <p>Achievements and recognitions will be added here.</p>
     </section>
 
+    <!-- RESUME -->
     <section id="resume" class="section">
       <h2>Resume</h2>
-      <iframe class="resume-frame" src="assets/resume.pdf"></iframe>
-      <div class="download">
-        <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
-      </div>
+      <iframe class="resume-frame" src="sources/Lakshmi_Teja_Kumar.pdf"></iframe>
+      <br><br>
+      <a class="btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download Resume</a>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section contact">
       <h2>Contact</h2>
       <p>Email: lakshmitejakumar.sriperumbudur@gmail.com</p>
-      <p>Phone: +91 XXXXXXXXXX</p>
-      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <p>LinkedIn: linkedin.com/in/your-profile</p>
     </section>
 
   </div>
 
-  <!-- VISUAL -->
   <div class="visual" id="visual">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD" alt="Profile">
+    <img src="sources/profile.jpg" alt="Profile">
   </div>
 
 </div>
@@ -322,23 +343,18 @@ let current = "home";
 
 function show(id) {
   if (id === current) return;
-
   document.getElementById(current).classList.remove("active");
   document.getElementById(id).classList.add("active");
   current = id;
 }
 
-function selectExp(index, company) {
-  const marker = document.getElementById("marker");
-  marker.style.top = (index * 80) + "px";
-
-  const visual = document.getElementById("visual");
-  visual.style.setProperty("--logo", company);
+function selectExp(index) {
+  document.getElementById("marker").style.top = (index * 72) + "px";
 
   document.getElementById("exp-details").innerHTML =
-    company === "niq"
-      ? "<h3>NIQ – Data Analyst</h3><p>NIQ experience details.</p>"
-      : "<h3>MORE Retail – Regional Manager</h3><p>MORE Retail experience details.</p>";
+    index === 0
+      ? "<h3>NIQ – Data Analyst</h3><p>Enterprise BI development, Power BI dashboards, KPI modeling, and stakeholder reporting.</p>"
+      : "<h3>MORE Retail – Analyst</h3><p>Sales analytics, reporting automation, and business performance insights.</p>";
 }
 </script>
 
