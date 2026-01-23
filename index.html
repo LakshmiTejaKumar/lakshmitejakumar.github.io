@@ -1,246 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lakshmi Teja Kumar S | Data Analyst & Power BI Developer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lakshmi Teja Kumar S | Portfolio</title>
 
-  <style>
-    :root {
-      --primary: #ff7a18;
-      --dark: #0f172a;
-      --text: #334155;
-      --bg: #f8fafc;
-    }
+<style>
+:root {
+  --primary: #ff7a18;
+  --dark: #0f172a;
+  --text: #334155;
+  --bg: #f8fafc;
+  --panel: #ffffff;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", system-ui, sans-serif;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
 
-    /* NAVBAR */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 80px;
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* HEADER */
+header {
+  height: 64px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 10;
+}
 
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--dark);
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--dark);
+}
 
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-    nav a:hover {
-      color: var(--primary);
-    }
+nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
 
-    /* HERO */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px;
-      gap: 60px;
-    }
+nav a.resume {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
 
-    .hero-text {
-      max-width: 520px;
-      animation: fadeUp 1s ease forwards;
-    }
+nav a:hover {
+  color: var(--primary);
+}
 
-    .hero-text span {
-      color: var(--primary);
-      font-weight: 600;
-      letter-spacing: 1px;
-      font-size: 14px;
-    }
+/* MAIN LAYOUT */
+.app {
+  display: flex;
+  height: calc(100vh - 64px);
+}
 
-    .hero-text h1 {
-      font-size: 52px;
-      color: var(--dark);
-      margin: 15px 0;
-      line-height: 1.2;
-    }
+/* CONTENT PANEL */
+.content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
 
-    .hero-text h1 strong {
-      color: var(--primary);
-    }
+.section {
+  position: absolute;
+  inset: 0;
+  padding: 60px;
+  overflow-y: auto;
+  background: var(--panel);
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.5s ease;
+}
 
-    .hero-text p {
-      margin: 20px 0 30px;
-      font-size: 16px;
-    }
+.section.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
 
-    .buttons a {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 15px;
-      transition: all 0.3s ease;
-    }
+/* IMAGE PANEL */
+.visual {
+  width: 38%;
+  position: relative;
+  background: #eef2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
+.visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: center / 300px no-repeat;
+  opacity: 0.06;
+  transition: background-image 0.5s ease;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255,122,24,0.3);
-    }
+.visual img {
+  width: 360px;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  z-index: 2;
+}
 
-    .btn-outline {
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
+/* HOME */
+.home h1 {
+  font-size: 48px;
+  color: var(--dark);
+}
 
-    .btn-outline:hover {
-      background: var(--primary);
-      color: #fff;
-    }
+.home h1 span {
+  color: var(--primary);
+}
 
-    /* HERO IMAGE */
-    .hero-img {
-      position: relative;
-      animation: fadeIn 1.2s ease forwards;
-    }
+.home p {
+  margin: 20px 0 30px;
+  max-width: 520px;
+}
 
-    .hero-img img {
-      width: 420px;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    }
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 30px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 80px;
-    }
+/* EXPERIENCE */
+.timeline {
+  display: flex;
+}
 
-    section h2 {
-      font-size: 36px;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
+.stations {
+  width: 260px;
+  position: relative;
+}
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.station {
+  padding: 20px 0;
+  cursor: pointer;
+  position: relative;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+.station span {
+  display: block;
+  font-weight: 600;
+  color: var(--dark);
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      header {
-        padding: 20px 30px;
-      }
+.station small {
+  color: #64748b;
+}
 
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 60px 30px;
-      }
+.marker {
+  position: absolute;
+  left: -34px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD") center/cover no-repeat;
+  transition: top 0.4s ease;
+}
 
-      .hero-img img {
-        width: 300px;
-        height: 380px;
-      }
+.exp-details {
+  padding-left: 60px;
+  max-width: 600px;
+}
 
-      nav {
-        display: none;
-      }
-    }
-  </style>
+/* RESUME */
+.resume-frame {
+  width: 100%;
+  height: 80%;
+  border: none;
+}
+
+.download {
+  margin-top: 20px;
+}
+
+/* CONTACT */
+.contact p {
+  margin: 12px 0;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <header>
-    <div class="logo">Lakshmi Teja Kumar</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="brand">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD" alt="Avatar">
+    Lakshmi Teja Kumar
+  </div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <span>WELCOME TO MY PORTFOLIO</span>
-      <h1>
-        Hi, I'm <strong>Lakshmi Teja</strong><br/>
-        Data Analyst & Power BI Developer
-      </h1>
-      <p>
-        Data Analyst with 4+ years of experience delivering enterprise BI solutions.
-        Specialized in Power BI, SQL, data modeling, and KPI-driven dashboards
-        that enable smarter business decisions.
-      </p>
-      <div class="buttons">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-outline">Contact Me</a>
+  <nav>
+    <a onclick="show('home')">Home</a>
+    <a onclick="show('about')">About Me</a>
+    <a onclick="show('experience')">Experience</a>
+    <a onclick="show('projects')">Projects</a>
+    <a onclick="show('education')">Education</a>
+    <a onclick="show('achievements')">Achievements</a>
+    <a class="resume" onclick="show('resume')">Resume</a>
+  </nav>
+</header>
+
+<div class="app">
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <section id="home" class="section home active">
+      <span style="color:var(--primary);font-weight:600;">WELCOME</span>
+      <h1>Hi, I'm <span>Lakshmi Teja</span></h1>
+      <p>Data Analyst & Power BI Developer with enterprise experience delivering KPI-driven insights and decision-ready dashboards.</p>
+      <a class="btn" onclick="show('contact')">Contact Me</a>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Professional summary will be filled here.</p>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+        <div class="stations">
+          <div class="marker" id="marker"></div>
+
+          <div class="station" onclick="selectExp(0, 'niq')">
+            <span>NIQ</span>
+            <small>May 2024 – Present</small>
+          </div>
+
+          <div class="station" onclick="selectExp(1, 'more')">
+            <span>MORE Retail Pvt Ltd</span>
+            <small>Oct 2021 – Aug 2022</small>
+          </div>
+        </div>
+
+        <div class="exp-details" id="exp-details">
+          <h3>NIQ – Data Analyst</h3>
+          <p>Responsibilities and impact details go here.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-img">
-      <img src="assets/profile.jpg" alt="Lakshmi Teja Kumar">
-    </div>
-  </section>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p>Dashboard projects will be added here.</p>
+    </section>
 
-  <!-- PLACEHOLDER SECTIONS -->
-  <section id="education">
-    <h2>Education</h2>
-    <p>Details will be added.</p>
-  </section>
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <p>Education details here.</p>
+    </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p>Details will be added.</p>
-  </section>
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
+      <p>Awards and recognitions here.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Power BI dashboards and analytics projects will be showcased here.</p>
-  </section>
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <iframe class="resume-frame" src="assets/resume.pdf"></iframe>
+      <div class="download">
+        <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: lakshmitejakumar.sriperumbudur@gmail.com</p>
-  </section>
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>Email: lakshmitejakumar.sriperumbudur@gmail.com</p>
+      <p>Phone: +91 XXXXXXXXXX</p>
+      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    </section>
+
+  </div>
+
+  <!-- VISUAL -->
+  <div class="visual" id="visual">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD" alt="Profile">
+  </div>
+
+</div>
+
+<script>
+let current = "home";
+
+function show(id) {
+  if (id === current) return;
+
+  document.getElementById(current).classList.remove("active");
+  document.getElementById(id).classList.add("active");
+  current = id;
+}
+
+function selectExp(index, company) {
+  const marker = document.getElementById("marker");
+  marker.style.top = (index * 80) + "px";
+
+  const visual = document.getElementById("visual");
+  visual.style.setProperty("--logo", company);
+
+  document.getElementById("exp-details").innerHTML =
+    company === "niq"
+      ? "<h3>NIQ – Data Analyst</h3><p>NIQ experience details.</p>"
+      : "<h3>MORE Retail – Regional Manager</h3><p>MORE Retail experience details.</p>";
+}
+</script>
 
 </body>
 </html>
