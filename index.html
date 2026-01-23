@@ -2,49 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lakshmi Teja Kumar S | Data Analyst & Power BI Developer</title>
+
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
     }
+
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
-    h1, h2 {
-      color: #38bdf8;
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      margin-bottom: 80px;
     }
-    .tagline {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #cbd5f5;
+
+    .hero-text {
+      flex: 1;
+      animation: fadeUp 1s ease;
     }
-    .section {
-      margin-bottom: 50px;
+
+    .hero-text h1 {
+      font-size: 44px;
+      margin-bottom: 10px;
     }
+
+    .hero-text h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #334155;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .hero-img {
+      flex: 0.9;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .hero-img img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 70px;
+      animation: fadeUp 1s ease;
+    }
+
+    section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    /* SKILLS */
     .skills span {
       display: inline-block;
-      background: #1e293b;
-      padding: 8px 12px;
-      margin: 6px;
+      background: #e2e8f0;
+      padding: 10px 14px;
       border-radius: 6px;
+      margin: 6px;
       font-size: 14px;
     }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
+
+    /* PROJECTS */
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
     }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-      color: #94a3b8;
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -53,33 +136,36 @@
   <div class="container">
 
     <!-- HERO -->
-    <section class="section">
-      <h1>Lakshmi Teja Kumar S</h1>
-      <p class="tagline">
-        Data Analyst & Power BI Developer with 4+ years of experience delivering
-        data-driven insights and enterprise BI solutions.
-      </p>
-      <p>
-        📧 <a href="mailto:lakshmitejakumar.sriperumbuduru@gmail.com">
-        lakshmitejakumar.sriperumbuduru@gmail.com</a> <br/>
-        📍 India
-      </p>
-    </section>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Lakshmi Teja Kumar S</h1>
+        <h2>Data Analyst & Power BI Developer</h2>
+        <p>
+          Data Analyst with 4+ years of experience delivering enterprise BI solutions.
+          Specialized in Power BI, SQL, data modeling, and KPI-driven dashboards that
+          enable faster and smarter business decisions.
+        </p>
+        <a class="btn" href="#projects">View My Work</a>
+      </div>
+
+      <div class="hero-img">
+        <img src="assets/profile.jpg" alt="Lakshmi Teja Kumar">
+      </div>
+    </div>
 
     <!-- ABOUT -->
-    <section class="section">
-      <h2>About Me</h2>
+    <section>
+      <h3>About Me</h3>
       <p>
-        Power BI Developer and Data Analyst with strong expertise in building
-        scalable dashboards, data models, and KPIs. Experienced in working with
-        large datasets, automating reports, and enabling faster business
-        decision-making across finance, supply chain, and operations.
+        I am a Power BI Developer and Data Analyst with hands-on experience in building
+        scalable dashboards, integrating data from multiple sources, and translating
+        complex datasets into actionable insights for business stakeholders.
       </p>
     </section>
 
     <!-- SKILLS -->
-    <section class="section">
-      <h2>Skills</h2>
+    <section>
+      <h3>Skills</h3>
       <div class="skills">
         <span>Power BI</span>
         <span>DAX</span>
@@ -87,47 +173,54 @@
         <span>SQL Server</span>
         <span>Snowflake</span>
         <span>Power Query</span>
-        <span>Data Modelling</span>
+        <span>Data Modeling</span>
         <span>Excel</span>
         <span>Python</span>
         <span>ETL</span>
-        <span>Row Level Security (RLS)</span>
+        <span>Row Level Security</span>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section">
-      <h2>Experience</h2>
-      <p><strong>NIQ – Data Analyst</strong> (2023 – 2025)</p>
-      <ul>
-        <li>Developed 20+ Power BI dashboards improving decision-making by 30%</li>
-        <li>Built optimized data models and DAX KPIs for large datasets</li>
-        <li>Implemented RLS, incremental refresh, and automation pipelines</li>
-      </ul>
-    </section>
-
     <!-- PROJECTS -->
-    <section class="section">
-      <h2>Projects</h2>
-      <p><strong>Enterprise Sales & Operations Dashboard</strong></p>
-      <ul>
-        <li>Integrated data from SQL, Excel, and Snowflake</li>
-        <li>Designed KPI-driven dashboards for leadership reporting</li>
-        <li>Improved reporting accuracy by 25%</li>
-      </ul>
+    <section id="projects">
+      <h3>Projects & Dashboards</h3>
+
+      <div class="card">
+        <h4>Enterprise Sales & Operations Dashboard</h4>
+        <p>
+          Built interactive Power BI dashboards integrating SQL, Excel, and Snowflake
+          data sources to track sales performance, margins, and operational KPIs.
+          Improved reporting accuracy by 25%.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>Supply Chain Analytics Dashboard</h4>
+        <p>
+          Designed KPI-driven dashboards for demand forecasting and inventory analysis,
+          reducing manual reporting effort by 30%.
+        </p>
+      </div>
     </section>
 
-    <!-- RESUME -->
-    <section class="section">
-      <h2>Resume</h2>
+    <!-- ACHIEVEMENTS -->
+    <section>
+      <h3>Achievements</h3>
       <p>
-        📄 <em>Resume will be downloadable here in the next step.</em>
+        • Overall Best Employee – Division Two<br/>
+        • Excellence in Quality & Productivity (94%+ data accuracy)<br/>
+        • Most Innovative Employer Award (Power BI innovations)
       </p>
     </section>
 
-    <footer>
-      © 2026 Lakshmi Teja Kumar S | Data Analyst & Power BI Developer
-    </footer>
+    <!-- INTERESTS -->
+    <section>
+      <h3>Interests & Hobbies</h3>
+      <p>
+        Data visualization, exploring analytics trends, continuous learning,
+        mentoring, and problem-solving through data.
+      </p>
+    </section>
 
   </div>
 
