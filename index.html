@@ -18,10 +18,9 @@
     body {
       background: #f8fafc;
       color: #0f172a;
-      overflow: hidden;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
     header {
       height: 80px;
       background: #ffffff;
@@ -30,6 +29,9 @@
       justify-content: space-between;
       padding: 0 60px;
       box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand {
@@ -45,22 +47,16 @@
       object-fit: cover;
     }
 
-    .brand span {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
     nav {
       display: flex;
-      align-items: center;
       gap: 30px;
+      align-items: center;
     }
 
     nav a {
       text-decoration: none;
       color: #334155;
       font-weight: 500;
-      font-size: 15px;
       cursor: pointer;
     }
 
@@ -81,56 +77,27 @@
       color: white;
     }
 
-    /* ================= APP ================= */
+    /* MAIN LAYOUT */
     .app {
-      height: calc(100vh - 80px);
+      min-height: calc(100vh - 80px);
       display: flex;
     }
 
-    /* LEFT CONTENT COLUMN (SCROLL HERE) */
+    /* LEFT CONTENT */
     .content {
       width: 55%;
-      position: relative;
-      overflow-y: auto;        /* ✅ single scrollbar */
-      overflow-x: hidden;
-    }
-
-    /* SECTIONS */
-    .page {
-      position: absolute;
-      inset: 0;
       padding: 40px 80px 60px;
-      opacity: 0;
-      transform: translateX(120px);
-      transition: all 0.6s ease;
-      pointer-events: none;
     }
 
-    .page.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-      position: relative;     /* required for scrolling */
-    }
-
-    .exit-left {
-      transform: translateX(-120px);
-      opacity: 0;
-    }
-
-    .exit-right {
-      transform: translateX(120px);
-      opacity: 0;
-    }
-
-    /* RIGHT PROFILE IMAGE */
+    /* RIGHT IMAGE (STICKY) */
     .profile {
       width: 45%;
+      position: sticky;
+      top: 120px;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      pointer-events: none;
     }
 
     .profile img {
@@ -155,30 +122,37 @@
       margin-top: 4px;
     }
 
-    /* TYPOGRAPHY */
-    .welcome {
-      color: #ff7a18;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
+    /* PAGE SECTIONS */
+    .page {
+      display: none;
+      animation: slideIn 0.6s ease forwards;
     }
 
+    .page.active {
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* TYPOGRAPHY */
     h1 {
       font-size: 42px;
-      margin-bottom: 18px;
-      color: #ff7a18; /* ✅ orange main heading */
-    }
-
-    h2 {
-      font-size: 24px;
       color: #ff7a18;
       margin-bottom: 18px;
     }
 
     h3 {
-      font-size: 18px;
-      margin: 28px 0 10px;
       color: #ff7a18;
+      margin: 28px 0 10px;
     }
 
     p {
@@ -197,56 +171,6 @@
     li {
       margin-bottom: 8px;
       color: #475569;
-      line-height: 1.7;
-    }
-
-    .contact-btn {
-      padding: 14px 32px;
-      background: #ff7a18;
-      border-radius: 40px;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    /* RESUME */
-    .resume-frame {
-      height: 58vh;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .resume-actions {
-      display: flex;
-      gap: 20px;
-    }
-
-    .resume-actions a {
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .preview-btn {
-      background: #ff7a18;
-      color: white;
-    }
-
-    .download-btn {
-      border: 2px solid #ff7a18;
-      color: #ff7a18;
-    }
-
-    .download-btn:hover {
-      background: #ff7a18;
-      color: white;
     }
   </style>
 </head>
@@ -260,51 +184,33 @@
   </div>
 
   <nav>
-    <a data-target="home">Home</a>
-    <a data-target="about">About Me</a>
-    <a data-target="experience">Experience</a>
-    <a data-target="skills">Skills</a>
-    <a data-target="projects">Projects</a>
-    <a data-target="education">Education</a>
-    <a data-target="achievements">Achievements</a>
-    <a class="resume-btn" data-target="resume">Resume</a>
+    <a onclick="show('about')">About Me</a>
+    <a onclick="show('experience')">Experience</a>
+    <a onclick="show('skills')">Skills</a>
+    <a onclick="show('projects')">Projects</a>
+    <a onclick="show('education')">Education</a>
+    <a onclick="show('achievements')">Achievements</a>
+    <a class="resume-btn" onclick="show('resume')">Resume</a>
   </nav>
 </header>
 
 <div class="app">
 
-  <!-- LEFT CONTENT -->
+  <!-- LEFT -->
   <div class="content">
 
-    <!-- HOME -->
-    <section id="home" class="page active">
-      <div class="welcome">WELCOME</div>
-      <h1>Hi, I'm Lakshmi Teja Kumar</h1>
-      <h2>Data Analyst & Power BI Developer</h2>
-      <p>
-        Enterprise Data Analyst with 4 years of experience delivering scalable
-        business intelligence solutions, KPI-driven dashboards, and analytical
-        insights. Experienced in translating business requirements into
-        data-driven decision-support systems.
-      </p>
-      <a class="contact-btn" data-target="contact">Contact Me</a>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="page">
+    <section id="about" class="page active">
       <h1>About Me</h1>
-
       <p>
-        I am a data professional with 4 years of hands-on experience, most
-        recently working as a Data Analyst (Power BI Developer) at NIQ, a global
-        market research organization with over a century of industry presence.
+        I am a data professional with 4 years of hands-on experience, most recently
+        working as a Data Analyst (Power BI Developer) at NIQ, a global market
+        research organization with over a century of industry presence.
       </p>
-
       <p>
-        I work across the complete analytics lifecycle, collaborating closely
-        with stakeholders to understand business requirements, prepare and
-        transform data, and deliver meaningful dashboards that support strategic
-        and operational decision-making.
+        I work across the complete analytics lifecycle, collaborating closely with
+        stakeholders to understand business requirements, prepare and transform
+        data, and deliver meaningful dashboards that support strategic and
+        operational decision-making.
       </p>
 
       <h3>Key Responsibilities</h3>
@@ -316,52 +222,22 @@
       </ul>
 
       <h3>Tools & Technologies</h3>
-      <p>
-        Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python,
-        Tableau
-      </p>
+      <p>Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python, Tableau</p>
 
       <h3>Career Focus</h3>
-      <p>
-        Data Analyst | Power BI Developer | Data Scientist
-      </p>
+      <p>Data Analyst | Power BI Developer | Data Scientist</p>
     </section>
 
-    <!-- PLACEHOLDERS -->
     <section id="experience" class="page"><h1>Experience</h1></section>
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
     <section id="education" class="page"><h1>Education</h1></section>
     <section id="achievements" class="page"><h1>Achievements</h1></section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="page">
-      <h1>Contact</h1>
-      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
-      <p><strong>Phone:</strong> +91 7093008246</p>
-      <p>
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
-          View Profile
-        </a>
-      </p>
-    </section>
-
-    <!-- RESUME -->
-    <section id="resume" class="page">
-      <h1>Resume</h1>
-      <div class="resume-frame">
-        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
-      </div>
-      <div class="resume-actions">
-        <a class="preview-btn">Preview</a>
-        <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download</a>
-      </div>
-    </section>
+    <section id="resume" class="page"><h1>Resume</h1></section>
 
   </div>
 
-  <!-- RIGHT IMAGE -->
+  <!-- RIGHT -->
   <div class="profile">
     <img src="sources/profile_new.png">
     <div class="caption">
@@ -373,26 +249,11 @@
 </div>
 
 <script>
-  const navLinks = document.querySelectorAll("[data-target]");
-  let current = document.querySelector(".page.active");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const next = document.getElementById(link.dataset.target);
-      if (!next || next === current) return;
-
-      const direction = link.dataset.target === "home" ? "exit-right" : "exit-left";
-      current.classList.add(direction);
-      current.classList.remove("active");
-
-      setTimeout(() => {
-        current.classList.remove(direction);
-        next.classList.add("active");
-        current = next;
-        document.querySelector(".content").scrollTop = 0; /* reset scroll */
-      }, 600);
-    });
-  });
+  function show(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 </script>
 
 </body>
