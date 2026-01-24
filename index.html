@@ -19,6 +19,7 @@
     body {
       background: #f8fafc;
       color: #0f172a;
+      overflow: hidden;
     }
 
     /* HEADER */
@@ -61,6 +62,7 @@
       color: #334155;
       font-weight: 500;
       font-size: 15px;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -73,7 +75,6 @@
       border-radius: 30px;
       color: #ff7a18;
       font-weight: 600;
-      text-decoration: none;
     }
 
     .resume-btn:hover {
@@ -81,15 +82,43 @@
       color: white;
     }
 
-    /* HERO SECTION */
-    .hero {
+    /* APP AREA */
+    .app {
+      position: relative;
       height: calc(100vh - 80px);
+      overflow: hidden;
+    }
+
+    .page {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       padding: 0 80px;
       gap: 80px;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.6s ease;
+      pointer-events: none;
     }
 
+    .page.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .page.exit-left {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+
+    .page.exit-right {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+
+    /* HOME LEFT */
     .hero-left {
       flex: 1;
     }
@@ -132,11 +161,7 @@
       display: inline-block;
     }
 
-    .contact-btn:hover {
-      background: #e56a10;
-    }
-
-    /* HERO RIGHT */
+    /* HOME RIGHT IMAGE (NO FRAME) */
     .hero-right {
       flex: 1;
       display: flex;
@@ -144,19 +169,8 @@
       align-items: center;
     }
 
-    .photo-frame {
-      width: 380px;          /* reduced size */
-      height: 480px;         /* reduced size */
-      background: #eef2f7;
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .photo-frame img {
-      height: 92%;           /* slightly reduced image inside frame */
-      width: auto;
+    .hero-right img {
+      height: 520px;
       object-fit: contain;
     }
 
@@ -168,8 +182,7 @@
     .photo-name {
       font-size: 20px;
       font-weight: 700;
-      color: #ff7a18;        /* same accent color */
-      letter-spacing: 0.3px;
+      color: #ff7a18;
     }
 
     .photo-degree {
@@ -178,72 +191,107 @@
       margin-top: 6px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 1100px) {
-      .hero {
-        flex-direction: column;
-        height: auto;
-        padding: 60px 30px;
-      }
-
-      .hero-right {
-        margin-top: 40px;
-      }
+    /* ABOUT PAGE */
+    .about {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
 
+    .about h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #475569;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="brand">
-      <img src="sources/avatar.jpg" alt="Avatar">
-      <span>Lakshmi Teja Kumar</span>
-    </div>
+<header>
+  <div class="brand">
+    <img src="sources/avatar.jpg">
+    <span>Lakshmi Teja Kumar</span>
+  </div>
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Me</a>
-      <a href="#">Experience</a>
-      <a href="#">Projects</a>
-      <a href="#">Education</a>
-      <a href="#">Achievements</a>
-      <a class="resume-btn" href="sources/Lakshmi_Teja_Kumar.pdf" target="_blank">Resume</a>
-    </nav>
-  </header>
+  <nav>
+    <a data-target="home">Home</a>
+    <a data-target="about">About Me</a>
+    <a>Experience</a>
+    <a>Projects</a>
+    <a>Education</a>
+    <a>Achievements</a>
+    <a class="resume-btn" href="sources/Lakshmi_Teja_Kumar.pdf" target="_blank">Resume</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
+<div class="app">
 
+  <!-- HOME -->
+  <section id="home" class="page active">
     <div class="hero-left">
       <div class="welcome">WELCOME</div>
-
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
       <h2>Data Analyst & Power BI Developer</h2>
-
       <p>
         Enterprise Data Analyst with 4+ years of experience delivering scalable
-        BI solutions, KPI-driven dashboards, and decision-support systems using
-        Power BI, SQL, and data modeling.
+        BI solutions, KPI-driven dashboards, and decision-support systems.
       </p>
-
-      <a class="contact-btn" href="#">Contact Me</a>
+      <a class="contact-btn">Contact Me</a>
     </div>
 
     <div class="hero-right">
-      <div class="photo-frame">
-        <img src="sources/profile_new.png" alt="Lakshmi Teja Kumar">
-      </div>
-
+      <img src="sources/profile_new.png">
       <div class="photo-caption">
         <div class="photo-name">S. Lakshmi Teja Kumar</div>
         <div class="photo-degree">MBA in Business Analytics</div>
       </div>
     </div>
-
   </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="page about">
+    <h1>About Me</h1>
+    <p>
+      I am a Data Analyst and Power BI Developer with 4+ years of experience
+      delivering data-driven insights, interactive dashboards, and enterprise
+      BI solutions using Power BI, SQL, and analytics best practices.
+    </p>
+  </section>
+
+</div>
+
+<script>
+  const links = document.querySelectorAll("nav a[data-target]");
+  let current = document.querySelector(".page.active");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      const targetId = link.dataset.target;
+      const next = document.getElementById(targetId);
+
+      if (next === current) return;
+
+      const direction =
+        targetId === "home" ? "exit-right" : "exit-left";
+
+      current.classList.add(direction);
+      current.classList.remove("active");
+
+      setTimeout(() => {
+        current.classList.remove(direction);
+        next.classList.add("active");
+        current = next;
+      }, 600);
+    });
+  });
+</script>
 
 </body>
 </html>
