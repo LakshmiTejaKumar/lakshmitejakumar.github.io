@@ -2,193 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lakshmi Teja Kumar | Portfolio</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
-      background: #f8fafc;
-      color: #0f172a;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
     }
 
-    /* HEADER */
     header {
-      height: 80px;
-      background: #ffffff;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
-      box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      font-weight: bold;
     }
 
-    .brand img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .brand span {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #334155;
-      font-weight: 500;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ff7a18;
-    }
-
-    .resume-btn {
-      padding: 10px 20px;
-      border: 2px solid #ff7a18;
-      border-radius: 30px;
-      color: #ff7a18;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .resume-btn:hover {
-      background: #ff7a18;
-      color: white;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      height: calc(100vh - 80px);
-      display: flex;
-      align-items: center;
-      padding: 0 80px;
-      gap: 80px;
-    }
-
-    .hero-left {
-      flex: 1;
-    }
-
-    .welcome {
-      color: #ff7a18;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
-
-    .hero-left h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .hero-left h2 {
-      font-size: 26px;
-      font-weight: 600;
-      color: #ff7a18;
-      margin-bottom: 20px;
-    }
-
-    .hero-left p {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #475569;
-      max-width: 520px;
-      margin-bottom: 30px;
-    }
-
-    .contact-btn {
-      padding: 14px 32px;
-      background: #ff7a18;
-      border-radius: 40px;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
+    .nav-right li {
       display: inline-block;
+      margin-left: 20px;
+      cursor: pointer;
     }
 
-    .contact-btn:hover {
-      background: #e56a10;
+    .nav-right li:hover {
+      color: orange;
     }
 
-    /* HERO RIGHT */
-    .hero-right {
-      flex: 1;
+    .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      height: calc(100vh - 70px);
+      padding: 40px;
     }
 
-    .photo-frame {
-      width: 420px;
-      height: 520px;
-      background: #eef2f7;
-      border-radius: 24px;
+    .left {
+      width: 50%;
+    }
+
+    .right {
+      width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .photo-frame img {
-      height: 100%;
-      width: auto;
+    .right img {
+      max-height: 90%;
       object-fit: contain;
     }
 
-    .photo-caption {
-      margin-top: 18px;
-      text-align: center;
+    /* Hide About section initially */
+    #about {
+      display: none;
+      padding: 40px;
     }
-
-    .photo-name {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .photo-degree {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 4px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1100px) {
-      .hero {
-        flex-direction: column;
-        height: auto;
-        padding: 60px 30px;
-      }
-
-      .hero-right {
-        margin-top: 40px;
-      }
-    }
-
   </style>
 </head>
 
@@ -196,52 +71,73 @@
 
   <!-- HEADER -->
   <header>
-    <div class="brand">
-      <img src="sources/avatar.jpg" alt="Avatar">
-      <span>Lakshmi Teja Kumar</span>
+    <div class="nav-left">
+      <img src="sources/avatar.jpg" width="40" height="40" style="border-radius:50%">
+      Lakshmi Teja Kumar
     </div>
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Me</a>
-      <a href="#">Experience</a>
-      <a href="#">Projects</a>
-      <a href="#">Education</a>
-      <a href="#">Achievements</a>
-      <a class="resume-btn" href="sources/Lakshmi_Teja_Kumar.pdf" target="_blank">Resume</a>
-    </nav>
+    <ul class="nav-right">
+      <li id="home-link">Home</li>
+      <li id="about-link">About Me</li>
+      <li>Experience</li>
+      <li>Projects</li>
+      <li>Education</li>
+      <li>Achievements</li>
+      <li style="color:orange;font-weight:bold;">Resume</li>
+    </ul>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-left">
-      <div class="welcome">WELCOME</div>
-
-      <h1>Hi, I'm Lakshmi Teja Kumar</h1>
-      <h2>Data Analyst & Power BI Developer</h2>
-
-      <p>
-        Enterprise Data Analyst with 4+ years of experience delivering scalable
-        BI solutions, KPI-driven dashboards, and decision-support systems using
-        Power BI, SQL, and data modeling.
-      </p>
-
-      <a class="contact-btn" href="#">Contact Me</a>
-    </div>
-
-    <div class="hero-right">
-      <div class="photo-frame">
-        <img src="sources/profile_new.png" alt="Lakshmi Teja Kumar">
+  <!-- HOME SECTION -->
+  <div id="home">
+    <div class="container">
+      <div class="left">
+        <h4>WELCOME</h4>
+        <h1>Hi, I'm Lakshmi Teja Kumar</h1>
+        <h3>Data Analyst & Power BI Developer</h3>
+        <p>
+          Data professional with 4+ years of experience in analytics,
+          reporting, dashboards, and business insights.
+        </p>
+        <button>Contact Me</button>
       </div>
 
-      <div class="photo-caption">
-        <div class="photo-name">Lakshmi Teja Kumar</div>
-        <div class="photo-degree">MBA in Business Analytics</div>
+      <div class="right">
+        <img src="sources/profile_new.png" alt="Profile Image">
       </div>
     </div>
+  </div>
 
-  </section>
+  <!-- ABOUT ME SECTION -->
+  <div id="about">
+    <h1>About Me</h1>
+    <p>
+      I am a Data Analyst and Power BI Developer with 4+ years of experience
+      working on business analytics, dashboards, and data-driven decision making.
+    </p>
+    <p>
+      I hold an MBA in Business Analytics and specialize in Power BI, SQL,
+      Excel, and data visualization.
+    </p>
+  </div>
+
+  <!-- JAVASCRIPT (VERY SIMPLE) -->
+  <script>
+    const homeLink = document.getElementById("home-link");
+    const aboutLink = document.getElementById("about-link");
+
+    const homeSection = document.getElementById("home");
+    const aboutSection = document.getElementById("about");
+
+    aboutLink.onclick = function () {
+      homeSection.style.display = "none";
+      aboutSection.style.display = "block";
+    };
+
+    homeLink.onclick = function () {
+      aboutSection.style.display = "none";
+      homeSection.style.display = "block";
+    };
+  </script>
 
 </body>
 </html>
