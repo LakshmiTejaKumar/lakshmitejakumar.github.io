@@ -20,7 +20,7 @@
       color: #0f172a;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
     header {
       height: 80px;
       background: #ffffff;
@@ -45,6 +45,11 @@
       height: 46px;
       border-radius: 50%;
       object-fit: cover;
+    }
+
+    .brand span {
+      font-size: 18px;
+      font-weight: 600;
     }
 
     nav {
@@ -77,24 +82,21 @@
       color: white;
     }
 
-    /* MAIN LAYOUT */
+    /* ================= LAYOUT ================= */
     .app {
       min-height: calc(100vh - 80px);
       display: flex;
     }
 
-    /* LEFT CONTENT */
     .content {
       width: 55%;
       padding: 40px 80px 60px;
     }
 
-    /* RIGHT IMAGE (STICKY) */
     .profile {
       width: 45%;
       position: sticky;
       top: 120px;
-      height: fit-content;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -122,7 +124,7 @@
       margin-top: 4px;
     }
 
-    /* PAGE SECTIONS */
+    /* ================= SECTIONS ================= */
     .page {
       display: none;
       animation: slideIn 0.6s ease forwards;
@@ -143,9 +145,22 @@
       }
     }
 
-    /* TYPOGRAPHY */
+    /* ================= TYPOGRAPHY ================= */
+    .welcome {
+      color: #ff7a18;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
     h1 {
       font-size: 42px;
+      color: #ff7a18;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 24px;
       color: #ff7a18;
       margin-bottom: 18px;
     }
@@ -153,6 +168,7 @@
     h3 {
       color: #ff7a18;
       margin: 28px 0 10px;
+      font-size: 18px;
     }
 
     p {
@@ -172,6 +188,18 @@
       margin-bottom: 8px;
       color: #475569;
     }
+
+    .contact-btn {
+      padding: 14px 32px;
+      background: #ff7a18;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
@@ -184,6 +212,7 @@
   </div>
 
   <nav>
+    <a onclick="show('home')">Home</a>
     <a onclick="show('about')">About Me</a>
     <a onclick="show('experience')">Experience</a>
     <a onclick="show('skills')">Skills</a>
@@ -196,48 +225,120 @@
 
 <div class="app">
 
-  <!-- LEFT -->
+  <!-- LEFT CONTENT -->
   <div class="content">
 
-    <section id="about" class="page active">
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="welcome">WELCOME</div>
+      <h1>Hi, I'm Lakshmi Teja Kumar</h1>
+      <h2>Data Analyst & Power BI Developer</h2>
+      <p>
+        Enterprise Data Analyst with 4 years of professional experience delivering
+        scalable business intelligence solutions, KPI-driven dashboards, and
+        data-backed insights. Known for bridging the gap between business needs
+        and analytical solutions through strong stakeholder collaboration and
+        technical expertise.
+      </p>
+      <a class="contact-btn" onclick="show('contact')">Contact Me</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
       <h1>About Me</h1>
+
       <p>
         I am a data professional with 4 years of hands-on experience, most recently
         working as a Data Analyst (Power BI Developer) at NIQ, a global market
         research organization with over a century of industry presence.
       </p>
+
       <p>
         I work across the complete analytics lifecycle, collaborating closely with
-        stakeholders to understand business requirements, prepare and transform
+        business stakeholders to understand requirements, prepare and transform
         data, and deliver meaningful dashboards that support strategic and
         operational decision-making.
+      </p>
+
+      <p>
+        My approach combines strong business understanding with technical depth,
+        enabling me to design analytical solutions that are both insightful and
+        scalable.
       </p>
 
       <h3>Key Responsibilities</h3>
       <ul>
         <li>Data gathering and preparation from multiple sources</li>
-        <li>Stakeholder requirement discussions</li>
-        <li>Power BI dashboard development</li>
-        <li>Semantic models and Row-Level Security (RLS)</li>
+        <li>Stakeholder requirement discussions and KPI definition</li>
+        <li>Power BI dashboard development and enhancement</li>
+        <li>Semantic model design and Row-Level Security (RLS)</li>
       </ul>
 
       <h3>Tools & Technologies</h3>
-      <p>Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python, Tableau</p>
+      <p>
+        Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python,
+        Tableau
+      </p>
 
       <h3>Career Focus</h3>
-      <p>Data Analyst | Power BI Developer | Data Scientist</p>
+      <p>
+        Data Analyst | Power BI Developer | Data Scientist
+      </p>
     </section>
 
-    <section id="experience" class="page"><h1>Experience</h1></section>
-    <section id="skills" class="page"><h1>Skills</h1></section>
-    <section id="projects" class="page"><h1>Projects</h1></section>
-    <section id="education" class="page"><h1>Education</h1></section>
-    <section id="achievements" class="page"><h1>Achievements</h1></section>
-    <section id="resume" class="page"><h1>Resume</h1></section>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="page">
+      <h1>Experience</h1>
+      <p>NIQ — Data Analyst / Power BI Developer (Jan 2023 – Nov 2025)</p>
+      <p>Retail Analytics — Data Analyst (Previous Experience)</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="page">
+      <h1>Skills</h1>
+      <p>Business Intelligence, Data Analysis, Dashboard Design, Stakeholder Management</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page">
+      <h1>Projects</h1>
+      <p>Power BI dashboards, KPI reporting systems, analytical models</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="page">
+      <h1>Education</h1>
+      <p>MBA in Business Analytics</p>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="page">
+      <h1>Achievements</h1>
+      <p>Certifications and professional achievements will be listed here.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+      <h1>Contact</h1>
+      <p>Email: lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p>Phone: +91 7093008246</p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="page">
+      <h1>Resume</h1>
+      <p>Resume preview and download will be available here.</p>
+    </section>
 
   </div>
 
-  <!-- RIGHT -->
+  <!-- RIGHT IMAGE -->
   <div class="profile">
     <img src="sources/profile_new.png">
     <div class="caption">
