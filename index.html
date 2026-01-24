@@ -52,16 +52,16 @@
 
     nav {
       display: flex;
-      align-items: center;
       gap: 30px;
+      align-items: center;
     }
 
     nav a {
-      text-decoration: none;
-      color: #334155;
-      font-weight: 500;
       font-size: 15px;
+      font-weight: 500;
+      color: #334155;
       cursor: pointer;
+      text-decoration: none;
     }
 
     nav a:hover {
@@ -81,46 +81,14 @@
       color: white;
     }
 
-    /* APP LAYOUT */
+    /* APP */
     .app {
       height: calc(100vh - 80px);
       display: flex;
     }
 
-    /* FIXED IMAGE */
-    .fixed-image {
-      width: 45%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .fixed-image img {
-      height: 560px;
-      object-fit: contain;
-    }
-
-    .photo-caption {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .photo-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #ff7a18;
-    }
-
-    .photo-degree {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 6px;
-    }
-
-    /* CONTENT AREA */
-    .content-area {
+    /* LEFT CONTENT */
+    .content {
       width: 55%;
       position: relative;
       overflow: hidden;
@@ -129,12 +97,12 @@
     .page {
       position: absolute;
       inset: 0;
-      padding: 80px;
+      padding: 70px 80px;
       opacity: 0;
       transform: translateX(120px);
       transition: all 0.6s ease;
       pointer-events: none;
-      overflow-y: auto; /* 🔑 SECTION-LEVEL SCROLL */
+      overflow-y: auto; /* ✅ section scroll */
     }
 
     .page.active {
@@ -153,40 +121,51 @@
       opacity: 0;
     }
 
-    /* TYPOGRAPHY */
-    h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
+    /* RIGHT IMAGE */
+    .profile {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
     }
 
-    h2 {
-      font-size: 24px;
+    .profile img {
+      height: 560px;
+      object-fit: contain;
+    }
+
+    .caption {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .caption .name {
+      font-size: 20px;
+      font-weight: 700;
       color: #ff7a18;
-      margin-bottom: 20px;
     }
 
-    h3 {
-      margin-top: 28px;
-      margin-bottom: 12px;
-      font-size: 18px;
+    .caption .degree {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 4px;
     }
 
-    p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #475569;
-      max-width: 680px;
-      margin-bottom: 18px;
-    }
+    /* TYPOGRAPHY */
+    h1 { font-size: 42px; margin-bottom: 16px; }
+    h2 { font-size: 24px; color: #ff7a18; margin-bottom: 18px; }
+    h3 { font-size: 18px; margin: 26px 0 10px; }
+    p  { font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 16px; }
+    ul { margin-left: 20px; }
+    li { margin-bottom: 8px; color: #475569; }
 
-    ul {
-      margin-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      line-height: 1.7;
-      color: #475569;
+    .welcome {
+      color: #ff7a18;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
     }
 
     .contact-btn {
@@ -196,8 +175,9 @@
       color: white;
       font-weight: 600;
       text-decoration: none;
-      display: inline-block;
       cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     /* RESUME */
@@ -219,13 +199,10 @@
       border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
+      cursor: pointer;
     }
 
-    .preview-btn {
-      background: #ff7a18;
-      color: white;
-    }
-
+    .preview-btn { background: #ff7a18; color: white; }
     .download-btn {
       border: 2px solid #ff7a18;
       color: #ff7a18;
@@ -260,8 +237,8 @@
 
 <div class="app">
 
-  <!-- CONTENT -->
-  <div class="content-area">
+  <!-- LEFT -->
+  <div class="content">
 
     <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
@@ -270,67 +247,36 @@
       <p>
         Enterprise Data Analyst with 4 years of experience delivering scalable
         business intelligence solutions, KPI-driven dashboards, and analytical
-        insights. Experienced in working closely with stakeholders to understand
-        business requirements, analyze data, and translate insights into
-        decision-support systems.
+        insights. Experienced in translating business requirements into
+        data-driven decision-support systems.
       </p>
       <a class="contact-btn" data-target="contact">Contact Me</a>
     </section>
 
-    <!-- ABOUT ME (FULL CONTENT) -->
     <section id="about" class="page">
       <h1>About Me</h1>
 
       <p>
-        I am a data professional with 4 years of hands-on experience working
-        closely with business stakeholders and data to deliver actionable
-        insights. My most recent experience was as a Data Analyst (Power BI
-        Developer) at NIQ, a global market research organization with over a
-        century of industry presence.
-      </p>
-
-      <p>
-        I have strong experience across the end-to-end analytics lifecycle,
-        including requirement gathering, data preparation, dashboard
-        development, and insight delivery. I regularly collaborated with
-        stakeholders to define KPIs and translate business problems into scalable
-        analytical solutions.
+        Data professional with 4 years of experience, most recently working as a
+        Data Analyst (Power BI Developer) at NIQ, a global market research
+        organization.
       </p>
 
       <h3>Key Responsibilities</h3>
       <ul>
-        <li>Data gathering and consolidation from multiple sources</li>
-        <li>Stakeholder meetings to finalize reporting requirements</li>
-        <li>Data cleaning, transformation, and validation</li>
-        <li>Designing and developing Power BI dashboards</li>
-        <li>Enhancing dashboards using semantic models</li>
-        <li>Implementing Row-Level Security (RLS)</li>
+        <li>Data gathering and preparation</li>
+        <li>Stakeholder requirement discussions</li>
+        <li>Dashboard development using Power BI</li>
+        <li>Semantic models and RLS implementation</li>
       </ul>
 
       <h3>Tools & Technologies</h3>
-      <p>
-        Power BI, Advanced Excel, DAX, Data Modelling, MySQL, SQL Server, SSMS,
-        VBA, Python, Tableau
-      </p>
-
-      <h3>Domain Experience</h3>
-      <p>Market Research (NIQ) and Retail Analytics</p>
-
-      <h3>Core Strengths</h3>
-      <ul>
-        <li>Understanding business requirements and analytical problem-solving</li>
-        <li>Strong balance between business/administrative and technical skills</li>
-      </ul>
+      <p>Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python, Tableau</p>
 
       <h3>Career Focus</h3>
-      <p>
-        Aspires to work closely with data in roles such as Data Analyst,
-        Power BI Developer, or Data Scientist, contributing to data-driven
-        decision-making.
-      </p>
+      <p>Data Analyst | Power BI Developer | Data Scientist</p>
     </section>
 
-    <!-- OTHER SECTIONS (unchanged placeholders) -->
     <section id="experience" class="page"><h1>Experience</h1></section>
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
@@ -362,32 +308,32 @@
 
   </div>
 
-  <!-- FIXED IMAGE -->
-  <div class="fixed-image">
+  <!-- RIGHT -->
+  <div class="profile">
     <img src="sources/profile_new.png">
-    <div class="photo-caption">
-      <div class="photo-name">S. Lakshmi Teja Kumar</div>
-      <div class="photo-degree">MBA in Business Analytics</div>
+    <div class="caption">
+      <div class="name">S. Lakshmi Teja Kumar</div>
+      <div class="degree">MBA in Business Analytics</div>
     </div>
   </div>
 
 </div>
 
 <script>
-  const links = document.querySelectorAll("[data-target]");
+  const navLinks = document.querySelectorAll("[data-target]");
   let current = document.querySelector(".page.active");
 
-  links.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener("click", () => {
       const next = document.getElementById(link.dataset.target);
       if (!next || next === current) return;
 
-      const direction = link.dataset.target === "home" ? "exit-right" : "exit-left";
-      current.classList.add(direction);
+      const dir = link.dataset.target === "home" ? "exit-right" : "exit-left";
+      current.classList.add(dir);
       current.classList.remove("active");
 
       setTimeout(() => {
-        current.classList.remove(direction);
+        current.classList.remove(dir);
         next.classList.add("active");
         current = next;
       }, 600);
