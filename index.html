@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -36,14 +35,15 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand img {
-      width: 42px;
-      height: 42px;
+      width: 52px;              /* increased */
+      height: 52px;
       border-radius: 50%;
       object-fit: cover;
+      image-rendering: auto;
     }
 
     .brand span {
@@ -97,7 +97,7 @@
       padding: 0 80px;
       gap: 80px;
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(120px);
       transition: all 0.6s ease;
       pointer-events: none;
     }
@@ -108,17 +108,17 @@
       pointer-events: auto;
     }
 
-    .page.exit-left {
-      transform: translateX(-100px);
+    .exit-left {
+      transform: translateX(-120px);
       opacity: 0;
     }
 
-    .page.exit-right {
-      transform: translateX(100px);
+    .exit-right {
+      transform: translateX(120px);
       opacity: 0;
     }
 
-    /* HOME LEFT */
+    /* HOME */
     .hero-left {
       flex: 1;
     }
@@ -161,7 +161,6 @@
       display: inline-block;
     }
 
-    /* HOME RIGHT IMAGE (NO FRAME) */
     .hero-right {
       flex: 1;
       display: flex;
@@ -170,7 +169,7 @@
     }
 
     .hero-right img {
-      height: 520px;
+      height: 540px;
       object-fit: contain;
     }
 
@@ -191,20 +190,20 @@
       margin-top: 6px;
     }
 
-    /* ABOUT PAGE */
-    .about {
+    /* GENERIC CONTENT PAGE */
+    .content-page {
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
     }
 
-    .about h1 {
-      font-size: 40px;
+    .content-page h1 {
+      font-size: 42px;
       margin-bottom: 20px;
     }
 
-    .about p {
-      max-width: 700px;
+    .content-page p {
+      max-width: 720px;
       font-size: 16px;
       line-height: 1.8;
       color: #475569;
@@ -216,17 +215,17 @@
 
 <header>
   <div class="brand">
-    <img src="sources/avatar.jpg">
+    <img src="sources/avatar.jpg" alt="Avatar">
     <span>Lakshmi Teja Kumar</span>
   </div>
 
   <nav>
     <a data-target="home">Home</a>
     <a data-target="about">About Me</a>
-    <a>Experience</a>
-    <a>Projects</a>
-    <a>Education</a>
-    <a>Achievements</a>
+    <a data-target="experience">Experience</a>
+    <a data-target="projects">Projects</a>
+    <a data-target="education">Education</a>
+    <a data-target="achievements">Achievements</a>
     <a class="resume-btn" href="sources/Lakshmi_Teja_Kumar.pdf" target="_blank">Resume</a>
   </nav>
 </header>
@@ -247,7 +246,7 @@
     </div>
 
     <div class="hero-right">
-      <img src="sources/profile_new.png">
+      <img src="sources/profile_new.png" alt="Profile">
       <div class="photo-caption">
         <div class="photo-name">S. Lakshmi Teja Kumar</div>
         <div class="photo-degree">MBA in Business Analytics</div>
@@ -255,14 +254,30 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="page about">
+  <!-- OTHER SECTIONS -->
+  <section id="about" class="page content-page">
     <h1>About Me</h1>
-    <p>
-      I am a Data Analyst and Power BI Developer with 4+ years of experience
-      delivering data-driven insights, interactive dashboards, and enterprise
-      BI solutions using Power BI, SQL, and analytics best practices.
-    </p>
+    <p>About Me content will go here.</p>
+  </section>
+
+  <section id="experience" class="page content-page">
+    <h1>Experience</h1>
+    <p>Experience timeline will be implemented next.</p>
+  </section>
+
+  <section id="projects" class="page content-page">
+    <h1>Projects</h1>
+    <p>Project details will be added here.</p>
+  </section>
+
+  <section id="education" class="page content-page">
+    <h1>Education</h1>
+    <p>Education details will go here.</p>
+  </section>
+
+  <section id="achievements" class="page content-page">
+    <h1>Achievements</h1>
+    <p>Achievements and certifications will go here.</p>
   </section>
 
 </div>
