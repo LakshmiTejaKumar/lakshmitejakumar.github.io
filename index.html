@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -82,36 +81,36 @@
       color: white;
     }
 
-    /* ================= APP LAYOUT ================= */
+    /* ================= APP ================= */
     .app {
       height: calc(100vh - 80px);
       display: flex;
     }
 
-    /* ================= LEFT CONTENT ================= */
+    /* LEFT CONTENT COLUMN (SCROLL HERE) */
     .content {
       width: 55%;
       position: relative;
-      overflow: hidden;
+      overflow-y: auto;        /* ✅ single scrollbar */
+      overflow-x: hidden;
     }
 
+    /* SECTIONS */
     .page {
       position: absolute;
       inset: 0;
       padding: 40px 80px 60px;
-      height: 100%;
       opacity: 0;
       transform: translateX(120px);
       transition: all 0.6s ease;
       pointer-events: none;
-      overflow-y: auto; /* ✅ scroll only here */
-      scroll-behavior: smooth;
     }
 
     .page.active {
       opacity: 1;
       transform: translateX(0);
       pointer-events: auto;
+      position: relative;     /* required for scrolling */
     }
 
     .exit-left {
@@ -124,7 +123,7 @@
       opacity: 0;
     }
 
-    /* ================= RIGHT IMAGE ================= */
+    /* RIGHT PROFILE IMAGE */
     .profile {
       width: 45%;
       display: flex;
@@ -156,7 +155,7 @@
       margin-top: 4px;
     }
 
-    /* ================= TYPOGRAPHY ================= */
+    /* TYPOGRAPHY */
     .welcome {
       color: #ff7a18;
       font-weight: 600;
@@ -166,8 +165,8 @@
 
     h1 {
       font-size: 42px;
-      margin-bottom: 14px;
-      color: #0f172a;
+      margin-bottom: 18px;
+      color: #ff7a18; /* ✅ orange main heading */
     }
 
     h2 {
@@ -179,7 +178,7 @@
     h3 {
       font-size: 18px;
       margin: 28px 0 10px;
-      color: #ff7a18; /* 🔑 colorful section headings */
+      color: #ff7a18;
     }
 
     p {
@@ -187,7 +186,7 @@
       line-height: 1.8;
       color: #475569;
       margin-bottom: 16px;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     ul {
@@ -213,7 +212,7 @@
       margin-top: 10px;
     }
 
-    /* ================= RESUME ================= */
+    /* RESUME */
     .resume-frame {
       height: 58vh;
       margin-bottom: 20px;
@@ -302,9 +301,10 @@
       </p>
 
       <p>
-        I work across the complete analytics lifecycle, collaborating with
-        stakeholders to understand requirements, prepare data, and deliver
-        meaningful dashboards that support business decisions.
+        I work across the complete analytics lifecycle, collaborating closely
+        with stakeholders to understand business requirements, prepare and
+        transform data, and deliver meaningful dashboards that support strategic
+        and operational decision-making.
       </p>
 
       <h3>Key Responsibilities</h3>
@@ -389,6 +389,7 @@
         current.classList.remove(direction);
         next.classList.add("active");
         current = next;
+        document.querySelector(".content").scrollTop = 0; /* reset scroll */
       }, 600);
     });
   });
