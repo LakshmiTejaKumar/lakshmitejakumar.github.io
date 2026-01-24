@@ -333,4 +333,67 @@
     <!-- OTHER SECTIONS (unchanged placeholders) -->
     <section id="experience" class="page"><h1>Experience</h1></section>
     <section id="skills" class="page"><h1>Skills</h1></section>
-    <section id="projects" class="page"><h1>P
+    <section id="projects" class="page"><h1>Projects</h1></section>
+    <section id="education" class="page"><h1>Education</h1></section>
+    <section id="achievements" class="page"><h1>Achievements</h1></section>
+
+    <section id="contact" class="page">
+      <h1>Contact</h1>
+      <p>Email: lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p>Phone: +91 7093008246</p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </section>
+
+    <section id="resume" class="page">
+      <h1>Resume</h1>
+      <div class="resume-frame">
+        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
+      </div>
+      <div class="resume-actions">
+        <a class="preview-btn">Preview</a>
+        <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FIXED IMAGE -->
+  <div class="fixed-image">
+    <img src="sources/profile_new.png">
+    <div class="photo-caption">
+      <div class="photo-name">S. Lakshmi Teja Kumar</div>
+      <div class="photo-degree">MBA in Business Analytics</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const links = document.querySelectorAll("[data-target]");
+  let current = document.querySelector(".page.active");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      const next = document.getElementById(link.dataset.target);
+      if (!next || next === current) return;
+
+      const direction = link.dataset.target === "home" ? "exit-right" : "exit-left";
+      current.classList.add(direction);
+      current.classList.remove("active");
+
+      setTimeout(() => {
+        current.classList.remove(direction);
+        next.classList.add("active");
+        current = next;
+      }, 600);
+    });
+  });
+</script>
+
+</body>
+</html>
