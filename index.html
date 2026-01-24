@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,7 +22,7 @@
       overflow: hidden;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
     header {
       height: 80px;
       background: #ffffff;
@@ -39,8 +40,8 @@
     }
 
     .brand img {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -53,7 +54,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
     }
 
     nav a {
@@ -78,23 +79,59 @@
 
     .resume-btn:hover {
       background: #ff7a18;
-      color: white;
+      color: #ffffff;
     }
 
-    /* APP AREA */
+    /* ================= APP LAYOUT ================= */
     .app {
       position: relative;
       height: calc(100vh - 80px);
+      display: flex;
+    }
+
+    /* Fixed Right Image */
+    .fixed-image {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .fixed-image img {
+      height: 560px; /* slightly enlarged */
+      object-fit: contain;
+    }
+
+    .photo-caption {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .photo-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff7a18;
+    }
+
+    .photo-degree {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    /* Left Content Area */
+    .content-area {
+      position: relative;
+      width: 55%;
       overflow: hidden;
     }
 
     .page {
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      padding: 0 80px;
-      gap: 80px;
+      padding: 80px;
       opacity: 0;
       transform: translateX(120px);
       transition: all 0.6s ease;
@@ -117,11 +154,7 @@
       opacity: 0;
     }
 
-    /* HOME */
-    .hero-left {
-      flex: 1;
-    }
-
+    /* ================= HOME ================= */
     .welcome {
       color: #ff7a18;
       font-weight: 600;
@@ -129,24 +162,24 @@
       margin-bottom: 18px;
     }
 
-    .hero-left h1 {
-      font-size: 48px;
+    h1 {
+      font-size: 46px;
       font-weight: 700;
       margin-bottom: 12px;
     }
 
-    .hero-left h2 {
+    h2 {
       font-size: 26px;
       font-weight: 600;
       color: #ff7a18;
       margin-bottom: 20px;
     }
 
-    .hero-left p {
+    p {
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.8;
       color: #475569;
-      max-width: 520px;
+      max-width: 640px;
       margin-bottom: 30px;
     }
 
@@ -158,64 +191,33 @@
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
+      cursor: pointer;
     }
 
-    .hero-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-right img {
-      height: 540px;
-      object-fit: contain;
-    }
-
-    .photo-caption {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .photo-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #ff7a18;
-    }
-
-    .photo-degree {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 6px;
-    }
-
-    /* CONTENT PAGES */
-    .content-page {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
+    /* ================= CONTENT SECTIONS ================= */
     .content-page h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
+      font-size: 40px;
+      margin-bottom: 24px;
     }
 
-    .content-page p {
-      max-width: 720px;
-      font-size: 16px;
-      line-height: 1.8;
+    .content-page ul {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .content-page li {
+      margin-bottom: 10px;
       color: #475569;
+      line-height: 1.7;
     }
 
-    /* RESUME */
-    .resume-container {
-      width: 100%;
-      height: 70vh;
+    /* ================= RESUME ================= */
+    .resume-frame {
+      height: 60vh; /* fixed overflow issue */
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      margin-bottom: 24px;
     }
 
     .resume-actions {
@@ -252,7 +254,7 @@
 
 <header>
   <div class="brand">
-    <img src="sources/profile_new.png" alt="Avatar">
+    <img src="sources/avatar_new.png" alt="Avatar">
     <span>Lakshmi Teja Kumar</span>
   </div>
 
@@ -260,6 +262,7 @@
     <a data-target="home">Home</a>
     <a data-target="about">About Me</a>
     <a data-target="experience">Experience</a>
+    <a data-target="skills">Skills</a>
     <a data-target="projects">Projects</a>
     <a data-target="education">Education</a>
     <a data-target="achievements">Achievements</a>
@@ -269,64 +272,138 @@
 
 <div class="app">
 
-  <!-- HOME -->
-  <section id="home" class="page active">
-    <div class="hero-left">
+  <!-- LEFT CONTENT -->
+  <div class="content-area">
+
+    <!-- HOME -->
+    <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
       <h2>Data Analyst & Power BI Developer</h2>
       <p>
-        Enterprise Data Analyst with 4+ years of experience delivering scalable
-        BI solutions, KPI-driven dashboards, and decision-support systems.
+        Enterprise Data Analyst with 4 years of experience delivering scalable
+        business intelligence solutions, KPI-driven dashboards, and analytical
+        insights. Experienced in working closely with stakeholders to understand
+        business requirements, analyze data, and translate insights into
+        decision-support systems using modern BI and analytics practices.
       </p>
-      <a class="contact-btn">Contact Me</a>
-    </div>
+      <a class="contact-btn" data-target="contact">Contact Me</a>
+    </section>
 
-    <div class="hero-right">
-      <img src="sources/profile_new.png" alt="Profile">
-      <div class="photo-caption">
-        <div class="photo-name">S. Lakshmi Teja Kumar</div>
-        <div class="photo-degree">MBA in Business Analytics</div>
+    <!-- ABOUT -->
+    <section id="about" class="page content-page">
+      <h1>About Me</h1>
+      <p>
+        Data professional with 4 years of experience, most recently working as a
+        Data Analyst (Power BI Developer) at NIQ, a global market research
+        organization. Experienced across the full analytics lifecycle, from
+        requirement gathering to dashboard delivery.
+      </p>
+
+      <h3>Key Responsibilities</h3>
+      <ul>
+        <li>Data gathering and preparation from multiple sources</li>
+        <li>Stakeholder discussions to finalize reporting requirements</li>
+        <li>Power BI dashboard development using semantic models</li>
+        <li>Data cleaning, transformation, and validation</li>
+        <li>Implementation of Row-Level Security (RLS)</li>
+      </ul>
+
+      <h3>Tools & Technologies</h3>
+      <p>
+        Power BI, Advanced Excel, DAX, Data Modelling, MySQL, SQL Server, SSMS,
+        VBA, Python, Tableau
+      </p>
+
+      <h3>Domain Experience</h3>
+      <p>Market Research (NIQ) and Retail Analytics</p>
+
+      <h3>Career Focus</h3>
+      <p>
+        Aspires to work closely with data in roles such as Data Analyst,
+        Power BI Developer, or Data Scientist.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="page content-page">
+      <h1>Experience</h1>
+      <p>Timeline implementation planned in Version 2.1</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="page content-page">
+      <h1>Skills</h1>
+      <p>Detailed skill matrix will be added in next iteration.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page content-page">
+      <h1>Projects</h1>
+      <p>Project details coming soon.</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="page content-page">
+      <h1>Education</h1>
+      <p>MBA in Business Analytics</p>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="page content-page">
+      <h1>Achievements</h1>
+      <p>Certifications and achievements will be added.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page content-page">
+      <h1>Contact</h1>
+      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p><strong>Phone:</strong> +91 7093008246</p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="page content-page">
+      <h1>Resume</h1>
+      <div class="resume-frame">
+        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
       </div>
+      <div class="resume-actions">
+        <a class="preview-btn" onclick="document.querySelector('#resume iframe').scrollIntoView()">Preview</a>
+        <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- RIGHT FIXED IMAGE -->
+  <div class="fixed-image">
+    <img src="sources/profile_new.png" alt="Profile Image">
+    <div class="photo-caption">
+      <div class="photo-name">S. Lakshmi Teja Kumar</div>
+      <div class="photo-degree">MBA in Business Analytics</div>
     </div>
-  </section>
-
-  <!-- OTHER SECTIONS -->
-  <section id="about" class="page content-page"><h1>About Me</h1><p>About content here.</p></section>
-  <section id="experience" class="page content-page"><h1>Experience</h1><p>Experience content here.</p></section>
-  <section id="projects" class="page content-page"><h1>Projects</h1><p>Projects content here.</p></section>
-  <section id="education" class="page content-page"><h1>Education</h1><p>Education content here.</p></section>
-  <section id="achievements" class="page content-page"><h1>Achievements</h1><p>Achievements content here.</p></section>
-
-  <!-- RESUME -->
-  <section id="resume" class="page content-page">
-    <h1>Resume</h1>
-
-    <div class="resume-container">
-      <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
-    </div>
-
-    <div class="resume-actions">
-      <a class="preview-btn" onclick="document.querySelector('#resume iframe').scrollIntoView()">Preview</a>
-      <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download</a>
-    </div>
-  </section>
+  </div>
 
 </div>
 
 <script>
-  const links = document.querySelectorAll("nav a[data-target]");
+  const links = document.querySelectorAll("[data-target]");
   let current = document.querySelector(".page.active");
 
   links.forEach(link => {
     link.addEventListener("click", () => {
       const targetId = link.dataset.target;
       const next = document.getElementById(targetId);
-
-      if (next === current) return;
+      if (!next || next === current) return;
 
       const direction = targetId === "home" ? "exit-right" : "exit-left";
-
       current.classList.add(direction);
       current.classList.remove("active");
 
