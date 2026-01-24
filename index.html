@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshmi Teja Kumar | Data Analyst & Power BI Developer</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,7 +22,7 @@
       overflow: hidden;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
     header {
       height: 80px;
       background: #ffffff;
@@ -52,16 +53,16 @@
 
     nav {
       display: flex;
-      gap: 30px;
       align-items: center;
+      gap: 30px;
     }
 
     nav a {
-      font-size: 15px;
-      font-weight: 500;
-      color: #334155;
-      cursor: pointer;
       text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -81,13 +82,13 @@
       color: white;
     }
 
-    /* APP */
+    /* ================= APP LAYOUT ================= */
     .app {
       height: calc(100vh - 80px);
       display: flex;
     }
 
-    /* LEFT CONTENT */
+    /* ================= LEFT CONTENT ================= */
     .content {
       width: 55%;
       position: relative;
@@ -97,12 +98,14 @@
     .page {
       position: absolute;
       inset: 0;
-      padding: 70px 80px;
+      padding: 40px 80px 60px;
+      height: 100%;
       opacity: 0;
       transform: translateX(120px);
       transition: all 0.6s ease;
       pointer-events: none;
-      overflow-y: auto; /* ✅ section scroll */
+      overflow-y: auto; /* ✅ scroll only here */
+      scroll-behavior: smooth;
     }
 
     .page.active {
@@ -121,7 +124,7 @@
       opacity: 0;
     }
 
-    /* RIGHT IMAGE */
+    /* ================= RIGHT IMAGE ================= */
     .profile {
       width: 45%;
       display: flex;
@@ -153,19 +156,49 @@
       margin-top: 4px;
     }
 
-    /* TYPOGRAPHY */
-    h1 { font-size: 42px; margin-bottom: 16px; }
-    h2 { font-size: 24px; color: #ff7a18; margin-bottom: 18px; }
-    h3 { font-size: 18px; margin: 26px 0 10px; }
-    p  { font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 16px; }
-    ul { margin-left: 20px; }
-    li { margin-bottom: 8px; color: #475569; }
-
+    /* ================= TYPOGRAPHY ================= */
     .welcome {
       color: #ff7a18;
       font-weight: 600;
       letter-spacing: 2px;
       margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #ff7a18;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 28px 0 10px;
+      color: #ff7a18; /* 🔑 colorful section headings */
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #475569;
+      line-height: 1.7;
     }
 
     .contact-btn {
@@ -180,9 +213,9 @@
       margin-top: 10px;
     }
 
-    /* RESUME */
+    /* ================= RESUME ================= */
     .resume-frame {
-      height: 60vh;
+      height: 58vh;
       margin-bottom: 20px;
       border-radius: 12px;
       overflow: hidden;
@@ -202,7 +235,11 @@
       cursor: pointer;
     }
 
-    .preview-btn { background: #ff7a18; color: white; }
+    .preview-btn {
+      background: #ff7a18;
+      color: white;
+    }
+
     .download-btn {
       border: 2px solid #ff7a18;
       color: #ff7a18;
@@ -237,9 +274,10 @@
 
 <div class="app">
 
-  <!-- LEFT -->
+  <!-- LEFT CONTENT -->
   <div class="content">
 
+    <!-- HOME -->
     <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
@@ -253,48 +291,63 @@
       <a class="contact-btn" data-target="contact">Contact Me</a>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="page">
       <h1>About Me</h1>
 
       <p>
-        Data professional with 4 years of experience, most recently working as a
-        Data Analyst (Power BI Developer) at NIQ, a global market research
-        organization.
+        I am a data professional with 4 years of hands-on experience, most
+        recently working as a Data Analyst (Power BI Developer) at NIQ, a global
+        market research organization with over a century of industry presence.
+      </p>
+
+      <p>
+        I work across the complete analytics lifecycle, collaborating with
+        stakeholders to understand requirements, prepare data, and deliver
+        meaningful dashboards that support business decisions.
       </p>
 
       <h3>Key Responsibilities</h3>
       <ul>
-        <li>Data gathering and preparation</li>
+        <li>Data gathering and preparation from multiple sources</li>
         <li>Stakeholder requirement discussions</li>
-        <li>Dashboard development using Power BI</li>
-        <li>Semantic models and RLS implementation</li>
+        <li>Power BI dashboard development</li>
+        <li>Semantic models and Row-Level Security (RLS)</li>
       </ul>
 
       <h3>Tools & Technologies</h3>
-      <p>Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python, Tableau</p>
+      <p>
+        Power BI, DAX, Advanced Excel, SQL Server, MySQL, SSMS, VBA, Python,
+        Tableau
+      </p>
 
       <h3>Career Focus</h3>
-      <p>Data Analyst | Power BI Developer | Data Scientist</p>
+      <p>
+        Data Analyst | Power BI Developer | Data Scientist
+      </p>
     </section>
 
+    <!-- PLACEHOLDERS -->
     <section id="experience" class="page"><h1>Experience</h1></section>
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
     <section id="education" class="page"><h1>Education</h1></section>
     <section id="achievements" class="page"><h1>Achievements</h1></section>
 
+    <!-- CONTACT -->
     <section id="contact" class="page">
       <h1>Contact</h1>
-      <p>Email: lakshmitejakumar.sriperumbuduru@gmail.com</p>
-      <p>Phone: +91 7093008246</p>
+      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p><strong>Phone:</strong> +91 7093008246</p>
       <p>
-        LinkedIn:
+        <strong>LinkedIn:</strong>
         <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
           View Profile
         </a>
       </p>
     </section>
 
+    <!-- RESUME -->
     <section id="resume" class="page">
       <h1>Resume</h1>
       <div class="resume-frame">
@@ -308,7 +361,7 @@
 
   </div>
 
-  <!-- RIGHT -->
+  <!-- RIGHT IMAGE -->
   <div class="profile">
     <img src="sources/profile_new.png">
     <div class="caption">
@@ -328,12 +381,12 @@
       const next = document.getElementById(link.dataset.target);
       if (!next || next === current) return;
 
-      const dir = link.dataset.target === "home" ? "exit-right" : "exit-left";
-      current.classList.add(dir);
+      const direction = link.dataset.target === "home" ? "exit-right" : "exit-left";
+      current.classList.add(direction);
       current.classList.remove("active");
 
       setTimeout(() => {
-        current.classList.remove(dir);
+        current.classList.remove(direction);
         next.classList.add("active");
         current = next;
       }, 600);
