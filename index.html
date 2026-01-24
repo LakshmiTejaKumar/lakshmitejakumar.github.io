@@ -39,11 +39,10 @@
     }
 
     .brand img {
-      width: 52px;              /* increased */
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       object-fit: cover;
-      image-rendering: auto;
     }
 
     .brand span {
@@ -190,7 +189,7 @@
       margin-top: 6px;
     }
 
-    /* GENERIC CONTENT PAGE */
+    /* CONTENT PAGES */
     .content-page {
       flex-direction: column;
       align-items: flex-start;
@@ -208,6 +207,44 @@
       line-height: 1.8;
       color: #475569;
     }
+
+    /* RESUME */
+    .resume-container {
+      width: 100%;
+      height: 70vh;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+    }
+
+    .resume-actions {
+      display: flex;
+      gap: 20px;
+    }
+
+    .resume-actions a {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .preview-btn {
+      background: #ff7a18;
+      color: white;
+    }
+
+    .download-btn {
+      border: 2px solid #ff7a18;
+      color: #ff7a18;
+    }
+
+    .download-btn:hover {
+      background: #ff7a18;
+      color: white;
+    }
   </style>
 </head>
 
@@ -215,7 +252,7 @@
 
 <header>
   <div class="brand">
-    <img src="sources/avatar.jpg" alt="Avatar">
+    <img src="sources/profile_new.png" alt="Avatar">
     <span>Lakshmi Teja Kumar</span>
   </div>
 
@@ -226,7 +263,7 @@
     <a data-target="projects">Projects</a>
     <a data-target="education">Education</a>
     <a data-target="achievements">Achievements</a>
-    <a class="resume-btn" href="sources/Lakshmi_Teja_Kumar.pdf" target="_blank">Resume</a>
+    <a class="resume-btn" data-target="resume">Resume</a>
   </nav>
 </header>
 
@@ -255,29 +292,24 @@
   </section>
 
   <!-- OTHER SECTIONS -->
-  <section id="about" class="page content-page">
-    <h1>About Me</h1>
-    <p>About Me content will go here.</p>
-  </section>
+  <section id="about" class="page content-page"><h1>About Me</h1><p>About content here.</p></section>
+  <section id="experience" class="page content-page"><h1>Experience</h1><p>Experience content here.</p></section>
+  <section id="projects" class="page content-page"><h1>Projects</h1><p>Projects content here.</p></section>
+  <section id="education" class="page content-page"><h1>Education</h1><p>Education content here.</p></section>
+  <section id="achievements" class="page content-page"><h1>Achievements</h1><p>Achievements content here.</p></section>
 
-  <section id="experience" class="page content-page">
-    <h1>Experience</h1>
-    <p>Experience timeline will be implemented next.</p>
-  </section>
+  <!-- RESUME -->
+  <section id="resume" class="page content-page">
+    <h1>Resume</h1>
 
-  <section id="projects" class="page content-page">
-    <h1>Projects</h1>
-    <p>Project details will be added here.</p>
-  </section>
+    <div class="resume-container">
+      <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
+    </div>
 
-  <section id="education" class="page content-page">
-    <h1>Education</h1>
-    <p>Education details will go here.</p>
-  </section>
-
-  <section id="achievements" class="page content-page">
-    <h1>Achievements</h1>
-    <p>Achievements and certifications will go here.</p>
+    <div class="resume-actions">
+      <a class="preview-btn" onclick="document.querySelector('#resume iframe').scrollIntoView()">Preview</a>
+      <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>Download</a>
+    </div>
   </section>
 
 </div>
@@ -293,8 +325,7 @@
 
       if (next === current) return;
 
-      const direction =
-        targetId === "home" ? "exit-right" : "exit-left";
+      const direction = targetId === "home" ? "exit-right" : "exit-left";
 
       current.classList.add(direction);
       current.classList.remove("active");
