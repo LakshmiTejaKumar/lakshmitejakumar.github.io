@@ -20,6 +20,7 @@
       color: #0f172a;
     }
 
+    /* HEADER */
     header {
       height: 80px;
       background: #ffffff;
@@ -68,6 +69,7 @@
       color: white;
     }
 
+    /* LAYOUT */
     .app {
       min-height: calc(100vh - 80px);
       display: flex;
@@ -109,6 +111,7 @@
       margin-top: 4px;
     }
 
+    /* SECTIONS */
     .page {
       display: none;
       animation: slideInRight 0.6s ease forwards;
@@ -132,6 +135,7 @@
       animation: slideInLeft 0.6s ease forwards;
     }
 
+    /* TYPOGRAPHY */
     .welcome {
       color: #ff7a18;
       font-weight: 600;
@@ -139,9 +143,23 @@
       margin-bottom: 14px;
     }
 
-    h1 { font-size: 42px; color: #ff7a18; margin-bottom: 18px; }
-    h2 { font-size: 24px; color: #ff7a18; margin-bottom: 18px; }
-    h3 { color: #ff7a18; margin: 28px 0 10px; font-size: 18px; }
+    h1 {
+      font-size: 42px;
+      color: #ff7a18;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #ff7a18;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      color: #ff7a18;
+      margin: 28px 0 10px;
+      font-size: 18px;
+    }
 
     p {
       font-size: 16px;
@@ -151,8 +169,15 @@
       max-width: 720px;
     }
 
-    ul { margin-left: 20px; margin-bottom: 16px; }
-    li { margin-bottom: 8px; color: #475569; }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #475569;
+    }
 
     .contact-btn {
       padding: 14px 32px;
@@ -164,42 +189,6 @@
       cursor: pointer;
       display: inline-block;
       margin-top: 10px;
-    }
-
-    .resume-frame {
-      height: 60vh;
-      margin-bottom: 24px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .resume-actions {
-      display: flex;
-      gap: 20px;
-    }
-
-    .resume-actions a {
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .preview-btn {
-      background: #ff7a18;
-      color: white;
-    }
-
-    .download-btn {
-      border: 2px solid #ff7a18;
-      color: #ff7a18;
-    }
-
-    .download-btn:hover {
-      background: #ff7a18;
-      color: white;
     }
 
     /* EXPERIENCE */
@@ -264,7 +253,7 @@
 
   <div class="content">
 
-    <!-- HOME -->
+    <!-- HOME (ORIGINAL – UNTOUCHED) -->
     <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
@@ -279,27 +268,57 @@
       <a class="contact-btn" onclick="show('contact')">Contact Me</a>
     </section>
 
-    <!-- ABOUT (UNCHANGED) -->
+    <!-- ABOUT (ORIGINAL – UNTOUCHED) -->
     <section id="about" class="page">
       <h1>About Me</h1>
+
       <p>
         I am a data professional with 4 years of hands-on experience, most recently
         working as a Data Analyst (Power BI Developer) at NIQ, a global market
         research organization with over a century of industry presence.
       </p>
+
       <p>
         I have strong experience across the complete analytics lifecycle,
         including requirement gathering, data preparation, dashboard development,
-        and insight delivery.
+        and insight delivery. I regularly collaborated with stakeholders to define
+        KPIs and translate business problems into scalable analytical solutions.
       </p>
+
       <p>
         My approach combines solid business and administrative understanding with
         technical expertise, enabling me to design analytics solutions that are
         both practical and impactful.
       </p>
+
+      <h3>Key Responsibilities</h3>
+      <ul>
+        <li>Data gathering and consolidation from multiple sources</li>
+        <li>Stakeholder meetings to finalize business and reporting requirements</li>
+        <li>Data cleaning, transformation, and validation</li>
+        <li>Designing and developing Power BI dashboards</li>
+        <li>Enhancing dashboards using semantic models</li>
+        <li>Implementing Row-Level Security (RLS)</li>
+      </ul>
+
+      <h3>Tools & Technologies</h3>
+      <p>
+        Power BI, Advanced Excel, DAX, Data Modelling, MySQL, SQL Server, SSMS,
+        VBA, Python, Tableau
+      </p>
+
+      <h3>Domain Experience</h3>
+      <p>
+        Market Research (NIQ) and Retail Analytics
+      </p>
+
+      <h3>Career Focus</h3>
+      <p>
+        Data Analyst | Power BI Developer | Data Scientist
+      </p>
     </section>
 
-    <!-- EXPERIENCE (NEW CONTENT) -->
+    <!-- EXPERIENCE (ONLY NEW CONTENT) -->
     <section id="experience" class="page">
       <h1>Experience</h1>
 
@@ -311,13 +330,11 @@
             <h3>Data Analyst – NIQ</h3>
             <span class="exp-meta">Jan 2023 – Nov 2025 | Chennai</span>
             <ul>
-              <li>Developed and maintained 20+ Power BI dashboards supporting supply chain, finance, and operations teams.</li>
-              <li>Integrated data from multiple sources including SQL Server, Excel, APIs, and Snowflake into semantic models.</li>
-              <li>Designed complex DAX measures and KPIs for profitability, churn analysis, and operational performance.</li>
-              <li>Implemented Row-Level Security (RLS) and incremental refresh for large datasets exceeding 1M+ rows.</li>
-              <li>Automated data preparation using Power Query, improving data accuracy and reducing manual effort.</li>
-              <li>Worked closely with cross-functional stakeholders to translate business requirements into BI solutions.</li>
-              <li>Enabled self-service analytics by training business users on Power BI dashboards and insights.</li>
+              <li>Developed and maintained Power BI dashboards for supply chain, finance, and operations teams.</li>
+              <li>Integrated data from SQL Server, Excel, APIs, and Snowflake into centralized semantic models.</li>
+              <li>Designed complex DAX measures and KPIs to support business performance tracking.</li>
+              <li>Implemented Row-Level Security (RLS) and optimized refresh strategies for large datasets.</li>
+              <li>Collaborated with stakeholders to translate business requirements into analytical solutions.</li>
             </ul>
           </div>
         </div>
@@ -328,10 +345,9 @@
             <h3>Marketing & Regional Manager – MORE Retail</h3>
             <span class="exp-meta">Oct 2021 – Aug 2022 | Tirupati</span>
             <ul>
-              <li>Managed sales and marketing operations across multiple retail outlets, achieving consistent revenue growth.</li>
-              <li>Built Excel-based dashboards to track sales, footfall, and performance metrics.</li>
-              <li>Executed regional marketing campaigns and analyzed customer insights to improve engagement.</li>
-              <li>Applied data-driven decision-making to optimize inventory and reduce operational losses.</li>
+              <li>Managed regional sales and marketing operations across multiple retail outlets.</li>
+              <li>Created Excel dashboards to track sales, footfall, and operational performance.</li>
+              <li>Executed data-driven marketing campaigns to improve customer engagement.</li>
             </ul>
           </div>
         </div>
@@ -339,20 +355,24 @@
       </div>
     </section>
 
-    <!-- PLACEHOLDERS -->
+    <!-- REMAINING SECTIONS (UNCHANGED) -->
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
     <section id="education" class="page"><h1>Education</h1></section>
     <section id="achievements" class="page"><h1>Achievements</h1></section>
 
-    <!-- CONTACT -->
     <section id="contact" class="page">
       <h1>Contact</h1>
       <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
       <p><strong>Phone:</strong> +91 7093008246</p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
+          View Profile
+        </a>
+      </p>
     </section>
 
-    <!-- RESUME -->
     <section id="resume" class="page">
       <h1>Resume</h1>
       <div class="resume-frame">
