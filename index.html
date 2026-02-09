@@ -20,7 +20,6 @@
       color: #0f172a;
     }
 
-    /* HEADER */
     header {
       height: 80px;
       background: #ffffff;
@@ -32,11 +31,6 @@
       position: sticky;
       top: 0;
       z-index: 100;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
     }
 
     .brand span {
@@ -74,7 +68,6 @@
       color: white;
     }
 
-    /* LAYOUT */
     .app {
       min-height: calc(100vh - 80px);
       display: flex;
@@ -116,7 +109,6 @@
       margin-top: 4px;
     }
 
-    /* SECTIONS */
     .page {
       display: none;
       animation: slideInRight 0.6s ease forwards;
@@ -127,32 +119,19 @@
     }
 
     @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     .page.from-left {
       animation: slideInLeft 0.6s ease forwards;
     }
 
-    /* TYPOGRAPHY */
     .welcome {
       color: #ff7a18;
       font-weight: 600;
@@ -160,23 +139,9 @@
       margin-bottom: 14px;
     }
 
-    h1 {
-      font-size: 42px;
-      color: #ff7a18;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: 24px;
-      color: #ff7a18;
-      margin-bottom: 18px;
-    }
-
-    h3 {
-      color: #ff7a18;
-      margin: 28px 0 10px;
-      font-size: 18px;
-    }
+    h1 { font-size: 42px; color: #ff7a18; margin-bottom: 18px; }
+    h2 { font-size: 24px; color: #ff7a18; margin-bottom: 18px; }
+    h3 { color: #ff7a18; margin: 28px 0 10px; font-size: 18px; }
 
     p {
       font-size: 16px;
@@ -186,15 +151,8 @@
       max-width: 720px;
     }
 
-    ul {
-      margin-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    li {
-      margin-bottom: 8px;
-      color: #475569;
-    }
+    ul { margin-left: 20px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; color: #475569; }
 
     .contact-btn {
       padding: 14px 32px;
@@ -208,7 +166,6 @@
       margin-top: 10px;
     }
 
-    /* RESUME */
     .resume-frame {
       height: 60vh;
       margin-bottom: 24px;
@@ -245,23 +202,22 @@
       color: white;
     }
 
-    /* EXPERIENCE TIMELINE */
+    /* EXPERIENCE */
     .experience-timeline {
-      position: relative;
-      margin-top: 40px;
-      padding-left: 30px;
       border-left: 3px solid #ff7a18;
+      padding-left: 30px;
+      margin-top: 30px;
     }
 
     .exp-item {
-      position: relative;
       margin-bottom: 40px;
+      position: relative;
     }
 
     .exp-dot {
       position: absolute;
       left: -11px;
-      top: 10px;
+      top: 6px;
       width: 18px;
       height: 18px;
       background: #ff7a18;
@@ -269,23 +225,17 @@
     }
 
     .exp-card {
-      background: #ffffff;
+      background: white;
       padding: 22px 26px;
       border-radius: 14px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     }
 
     .exp-meta {
-      display: block;
       font-size: 13px;
       color: #64748b;
       margin-bottom: 10px;
-    }
-
-    .exp-context {
-      font-size: 14px;
-      color: #475569;
-      margin-bottom: 14px;
+      display: block;
     }
   </style>
 </head>
@@ -314,6 +264,7 @@
 
   <div class="content">
 
+    <!-- HOME -->
     <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
@@ -321,19 +272,34 @@
       <p>
         Enterprise Data Analyst with 4 years of professional experience delivering
         scalable business intelligence solutions, KPI-driven dashboards, and
-        data-backed insights.
+        data-backed insights. Known for bridging the gap between business needs
+        and analytical solutions through strong stakeholder collaboration and
+        technical expertise.
       </p>
       <a class="contact-btn" onclick="show('contact')">Contact Me</a>
     </section>
 
+    <!-- ABOUT (UNCHANGED) -->
     <section id="about" class="page">
       <h1>About Me</h1>
       <p>
-        Data professional with strong experience across the complete analytics lifecycle,
-        specializing in Power BI, SQL, and enterprise BI solutions.
+        I am a data professional with 4 years of hands-on experience, most recently
+        working as a Data Analyst (Power BI Developer) at NIQ, a global market
+        research organization with over a century of industry presence.
+      </p>
+      <p>
+        I have strong experience across the complete analytics lifecycle,
+        including requirement gathering, data preparation, dashboard development,
+        and insight delivery.
+      </p>
+      <p>
+        My approach combines solid business and administrative understanding with
+        technical expertise, enabling me to design analytics solutions that are
+        both practical and impactful.
       </p>
     </section>
 
+    <!-- EXPERIENCE (NEW CONTENT) -->
     <section id="experience" class="page">
       <h1>Experience</h1>
 
@@ -343,25 +309,15 @@
           <div class="exp-dot"></div>
           <div class="exp-card">
             <h3>Data Analyst – NIQ</h3>
-            <span class="exp-meta">May 2024 – Nov 2025 | Chennai</span>
-            <p class="exp-context">Market Research & Retail Analytics</p>
+            <span class="exp-meta">Jan 2023 – Nov 2025 | Chennai</span>
             <ul>
-              <li>Delivered 20+ Power BI dashboards reducing manual reporting by 30%</li>
-              <li>Integrated 10+ data sources into centralized semantic models</li>
-              <li>Implemented RLS and incremental refresh for 1M+ row datasets</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-card">
-            <h3>Data Analyst – NIQ</h3>
-            <span class="exp-meta">Jan 2023 – Jun 2024</span>
-            <p class="exp-context">Sales & Operations Analytics</p>
-            <ul>
-              <li>Built 10+ dashboards improving decision efficiency by 30%</li>
-              <li>Optimized Power Query transformations reducing prep time by 35%</li>
+              <li>Developed and maintained 20+ Power BI dashboards supporting supply chain, finance, and operations teams.</li>
+              <li>Integrated data from multiple sources including SQL Server, Excel, APIs, and Snowflake into semantic models.</li>
+              <li>Designed complex DAX measures and KPIs for profitability, churn analysis, and operational performance.</li>
+              <li>Implemented Row-Level Security (RLS) and incremental refresh for large datasets exceeding 1M+ rows.</li>
+              <li>Automated data preparation using Power Query, improving data accuracy and reducing manual effort.</li>
+              <li>Worked closely with cross-functional stakeholders to translate business requirements into BI solutions.</li>
+              <li>Enabled self-service analytics by training business users on Power BI dashboards and insights.</li>
             </ul>
           </div>
         </div>
@@ -370,11 +326,12 @@
           <div class="exp-dot"></div>
           <div class="exp-card">
             <h3>Marketing & Regional Manager – MORE Retail</h3>
-            <span class="exp-meta">Oct 2021 – Aug 2022</span>
-            <p class="exp-context">Retail Operations & Sales Analytics</p>
+            <span class="exp-meta">Oct 2021 – Aug 2022 | Tirupati</span>
             <ul>
-              <li>Achieved 18% sales growth across multiple outlets</li>
-              <li>Built Excel dashboards improving forecast accuracy by 45%</li>
+              <li>Managed sales and marketing operations across multiple retail outlets, achieving consistent revenue growth.</li>
+              <li>Built Excel-based dashboards to track sales, footfall, and performance metrics.</li>
+              <li>Executed regional marketing campaigns and analyzed customer insights to improve engagement.</li>
+              <li>Applied data-driven decision-making to optimize inventory and reduce operational losses.</li>
             </ul>
           </div>
         </div>
@@ -382,21 +339,24 @@
       </div>
     </section>
 
+    <!-- PLACEHOLDERS -->
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
     <section id="education" class="page"><h1>Education</h1></section>
     <section id="achievements" class="page"><h1>Achievements</h1></section>
 
+    <!-- CONTACT -->
     <section id="contact" class="page">
       <h1>Contact</h1>
-      <p>Email: lakshmitejakumar.sriperumbuduru@gmail.com</p>
-      <p>Phone: +91 7093008246</p>
+      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p><strong>Phone:</strong> +91 7093008246</p>
     </section>
 
+    <!-- RESUME -->
     <section id="resume" class="page">
       <h1>Resume</h1>
       <div class="resume-frame">
-        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%"></iframe>
+        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
       </div>
     </section>
 
@@ -414,34 +374,15 @@
 
 <script>
   let lastIndex = 0;
-
-  const navOrder = [
-    'home',
-    'about',
-    'experience',
-    'skills',
-    'projects',
-    'education',
-    'achievements',
-    'contact',
-    'resume'
-  ];
+  const navOrder = ['home','about','experience','skills','projects','education','achievements','contact','resume'];
 
   function show(id) {
-    document.querySelectorAll('.page').forEach(p => {
-      p.classList.remove('active', 'from-left');
-    });
-
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active','from-left'));
     const currentIndex = navOrder.indexOf(id);
     const page = document.getElementById(id);
-
-    if (currentIndex < lastIndex) {
-      page.classList.add('from-left');
-    }
-
+    if (currentIndex < lastIndex) page.classList.add('from-left');
     page.classList.add('active');
     lastIndex = currentIndex;
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
