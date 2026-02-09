@@ -37,14 +37,6 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-    }
-
-    .brand img {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
     }
 
     .brand span {
@@ -127,14 +119,14 @@
     /* SECTIONS */
     .page {
       display: none;
-      animation: slideIn 0.6s ease forwards;
+      animation: slideInRight 0.6s ease forwards;
     }
 
     .page.active {
       display: block;
     }
 
-    @keyframes slideIn {
+    @keyframes slideInRight {
       from {
         opacity: 0;
         transform: translateX(60px);
@@ -143,6 +135,21 @@
         opacity: 1;
         transform: translateX(0);
       }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .page.from-left {
+      animation: slideInLeft 0.6s ease forwards;
     }
 
     /* TYPOGRAPHY */
@@ -237,6 +244,49 @@
       background: #ff7a18;
       color: white;
     }
+
+    /* EXPERIENCE TIMELINE */
+    .experience-timeline {
+      position: relative;
+      margin-top: 40px;
+      padding-left: 30px;
+      border-left: 3px solid #ff7a18;
+    }
+
+    .exp-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .exp-dot {
+      position: absolute;
+      left: -11px;
+      top: 10px;
+      width: 18px;
+      height: 18px;
+      background: #ff7a18;
+      border-radius: 50%;
+    }
+
+    .exp-card {
+      background: #ffffff;
+      padding: 22px 26px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .exp-meta {
+      display: block;
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .exp-context {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 14px;
+    }
   </style>
 </head>
 
@@ -244,7 +294,6 @@
 
 <header>
   <div class="brand">
-    <img src="sources/avatar_new.png">
     <span>Lakshmi Teja Kumar</span>
   </div>
 
@@ -265,7 +314,6 @@
 
   <div class="content">
 
-    <!-- HOME -->
     <section id="home" class="page active">
       <div class="welcome">WELCOME</div>
       <h1>Hi, I'm Lakshmi Teja Kumar</h1>
@@ -273,99 +321,82 @@
       <p>
         Enterprise Data Analyst with 4 years of professional experience delivering
         scalable business intelligence solutions, KPI-driven dashboards, and
-        data-backed insights. Known for bridging the gap between business needs
-        and analytical solutions through strong stakeholder collaboration and
-        technical expertise.
+        data-backed insights.
       </p>
       <a class="contact-btn" onclick="show('contact')">Contact Me</a>
     </section>
 
-    <!-- ABOUT (FULLY RESTORED) -->
     <section id="about" class="page">
       <h1>About Me</h1>
-
       <p>
-        I am a data professional with 4 years of hands-on experience, most recently
-        working as a Data Analyst (Power BI Developer) at NIQ, a global market
-        research organization with over a century of industry presence.
-      </p>
-
-      <p>
-        I have strong experience across the complete analytics lifecycle,
-        including requirement gathering, data preparation, dashboard development,
-        and insight delivery. I regularly collaborated with stakeholders to define
-        KPIs and translate business problems into scalable analytical solutions.
-      </p>
-
-      <p>
-        My approach combines solid business and administrative understanding with
-        technical expertise, enabling me to design analytics solutions that are
-        both practical and impactful.
-      </p>
-
-      <h3>Key Responsibilities</h3>
-      <ul>
-        <li>Data gathering and consolidation from multiple sources</li>
-        <li>Stakeholder meetings to finalize business and reporting requirements</li>
-        <li>Data cleaning, transformation, and validation</li>
-        <li>Designing and developing Power BI dashboards</li>
-        <li>Enhancing dashboards using semantic models</li>
-        <li>Implementing Row-Level Security (RLS)</li>
-      </ul>
-
-      <h3>Tools & Technologies</h3>
-      <p>
-        Power BI, Advanced Excel, DAX, Data Modelling, MySQL, SQL Server, SSMS,
-        VBA, Python, Tableau
-      </p>
-
-      <h3>Domain Experience</h3>
-      <p>
-        Market Research (NIQ) and Retail Analytics
-      </p>
-
-      <h3>Career Focus</h3>
-      <p>
-        Data Analyst | Power BI Developer | Data Scientist
+        Data professional with strong experience across the complete analytics lifecycle,
+        specializing in Power BI, SQL, and enterprise BI solutions.
       </p>
     </section>
 
-    <!-- EMPTY PLACEHOLDERS -->
-    <section id="experience" class="page"><h1>Experience</h1></section>
+    <section id="experience" class="page">
+      <h1>Experience</h1>
+
+      <div class="experience-timeline">
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <h3>Data Analyst – NIQ</h3>
+            <span class="exp-meta">May 2024 – Nov 2025 | Chennai</span>
+            <p class="exp-context">Market Research & Retail Analytics</p>
+            <ul>
+              <li>Delivered 20+ Power BI dashboards reducing manual reporting by 30%</li>
+              <li>Integrated 10+ data sources into centralized semantic models</li>
+              <li>Implemented RLS and incremental refresh for 1M+ row datasets</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <h3>Data Analyst – NIQ</h3>
+            <span class="exp-meta">Jan 2023 – Jun 2024</span>
+            <p class="exp-context">Sales & Operations Analytics</p>
+            <ul>
+              <li>Built 10+ dashboards improving decision efficiency by 30%</li>
+              <li>Optimized Power Query transformations reducing prep time by 35%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <h3>Marketing & Regional Manager – MORE Retail</h3>
+            <span class="exp-meta">Oct 2021 – Aug 2022</span>
+            <p class="exp-context">Retail Operations & Sales Analytics</p>
+            <ul>
+              <li>Achieved 18% sales growth across multiple outlets</li>
+              <li>Built Excel dashboards improving forecast accuracy by 45%</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="skills" class="page"><h1>Skills</h1></section>
     <section id="projects" class="page"><h1>Projects</h1></section>
     <section id="education" class="page"><h1>Education</h1></section>
     <section id="achievements" class="page"><h1>Achievements</h1></section>
 
-    <!-- CONTACT -->
     <section id="contact" class="page">
       <h1>Contact</h1>
-      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
-      <p><strong>Phone:</strong> +91 7093008246</p>
-      <p>
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
-          View Profile
-        </a>
-      </p>
+      <p>Email: lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p>Phone: +91 7093008246</p>
     </section>
 
-    <!-- RESUME -->
     <section id="resume" class="page">
       <h1>Resume</h1>
-
       <div class="resume-frame">
-        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
-      </div>
-
-      <div class="resume-actions">
-        <a class="preview-btn"
-           onclick="document.querySelector('#resume iframe').scrollIntoView({behavior:'smooth'})">
-          Preview
-        </a>
-        <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>
-          Download
-        </a>
+        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%"></iframe>
       </div>
     </section>
 
@@ -382,9 +413,35 @@
 </div>
 
 <script>
+  let lastIndex = 0;
+
+  const navOrder = [
+    'home',
+    'about',
+    'experience',
+    'skills',
+    'projects',
+    'education',
+    'achievements',
+    'contact',
+    'resume'
+  ];
+
   function show(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.page').forEach(p => {
+      p.classList.remove('active', 'from-left');
+    });
+
+    const currentIndex = navOrder.indexOf(id);
+    const page = document.getElementById(id);
+
+    if (currentIndex < lastIndex) {
+      page.classList.add('from-left');
+    }
+
+    page.classList.add('active');
+    lastIndex = currentIndex;
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
