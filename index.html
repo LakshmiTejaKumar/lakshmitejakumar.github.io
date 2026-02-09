@@ -8,117 +8,285 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background: #f8fafc; color: #0f172a; }
-
-    header {
-      height: 80px; background: #fff; display: flex; align-items: center;
-      justify-content: space-between; padding: 0 60px;
-      box-shadow: 0 1px 10px rgba(0,0,0,0.05);
-      position: sticky; top: 0; z-index: 100;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
-    .brand span { font-size: 18px; font-weight: 600; }
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+    }
 
-    nav { display: flex; gap: 30px; align-items: center; }
-    nav a { text-decoration: none; color: #334155; font-weight: 500; cursor: pointer; }
-    nav a:hover { color: #ff7a18; }
+    /* HEADER */
+    header {
+      height: 80px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #ff7a18;
+    }
 
     .resume-btn {
-      padding: 10px 20px; border: 2px solid #ff7a18;
-      border-radius: 30px; color: #ff7a18; font-weight: 600;
+      padding: 10px 20px;
+      border: 2px solid #ff7a18;
+      border-radius: 30px;
+      color: #ff7a18;
+      font-weight: 600;
     }
-    .resume-btn:hover { background: #ff7a18; color: #fff; }
 
-    .app { min-height: calc(100vh - 80px); display: flex; }
-    .content { width: 55%; padding: 40px 80px 60px; }
+    .resume-btn:hover {
+      background: #ff7a18;
+      color: white;
+    }
+
+    /* LAYOUT */
+    .app {
+      min-height: calc(100vh - 80px);
+      display: flex;
+    }
+
+    .content {
+      width: 55%;
+      padding: 40px 80px 60px;
+    }
 
     .profile {
-      width: 45%; position: sticky; top: 120px;
-      display: flex; flex-direction: column; align-items: center;
+      width: 45%;
+      position: sticky;
+      top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .profile img { height: 560px; object-fit: contain; }
 
-    .caption { margin-top: 18px; text-align: center; }
-    .caption .name { font-size: 20px; font-weight: 700; color: #ff7a18; }
-    .caption .degree { font-size: 14px; color: #64748b; margin-top: 4px; }
+    .profile img {
+      height: 560px;
+      object-fit: contain;
+    }
 
-    .page { display: none; animation: slideInRight 0.6s ease forwards; }
-    .page.active { display: block; }
+    .caption {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .caption .name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff7a18;
+    }
+
+    .caption .degree {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    .page {
+      display: none;
+      animation: slideInRight 0.6s ease forwards;
+    }
+
+    .page.active {
+      display: block;
+    }
 
     @keyframes slideInRight {
       from { opacity: 0; transform: translateX(60px); }
       to { opacity: 1; transform: translateX(0); }
     }
+
     @keyframes slideInLeft {
       from { opacity: 0; transform: translateX(-60px); }
       to { opacity: 1; transform: translateX(0); }
     }
-    .page.from-left { animation: slideInLeft 0.6s ease forwards; }
 
-    .welcome { color: #ff7a18; font-weight: 600; letter-spacing: 2px; margin-bottom: 14px; }
+    .page.from-left {
+      animation: slideInLeft 0.6s ease forwards;
+    }
+
+    /* TYPOGRAPHY */
+    .welcome {
+      color: #ff7a18;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
     h1 { font-size: 42px; color: #ff7a18; margin-bottom: 18px; }
     h2 { font-size: 24px; color: #ff7a18; margin-bottom: 18px; }
     h3 { color: #ff7a18; margin: 28px 0 10px; font-size: 18px; }
 
-    p { font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 16px; max-width: 720px; }
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 16px;
+      max-width: 720px;
+    }
+
     ul { margin-left: 20px; margin-bottom: 16px; }
     li { margin-bottom: 8px; color: #475569; }
 
     .contact-btn {
-      padding: 14px 32px; background: #ff7a18; border-radius: 40px;
-      color: white; font-weight: 600; text-decoration: none; cursor: pointer;
-      display: inline-block; margin-top: 10px;
+      padding: 14px 32px;
+      background: #ff7a18;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
     }
-
-    /* CARD UTIL */
-    .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px; }
-    .card {
-      background: #fff; padding: 24px 26px; border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    }
-    .card small { color: #64748b; font-size: 13px; }
 
     /* EXPERIENCE */
-    .experience-timeline { border-left: 3px solid #ff7a18; padding-left: 30px; margin-top: 30px; }
-    .exp-item { margin-bottom: 40px; position: relative; }
-    .exp-dot {
-      position: absolute; left: -11px; top: 6px;
-      width: 18px; height: 18px; background: #ff7a18; border-radius: 50%;
+    .experience-timeline {
+      border-left: 3px solid #ff7a18;
+      padding-left: 30px;
+      margin-top: 30px;
     }
+
+    .exp-item {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .exp-dot {
+      position: absolute;
+      left: -11px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      background: #ff7a18;
+      border-radius: 50%;
+    }
+
     .exp-card {
-      background: white; padding: 22px 26px; border-radius: 14px;
+      background: white;
+      padding: 22px 26px;
+      border-radius: 14px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     }
-    .exp-meta { font-size: 13px; color: #64748b; margin-bottom: 10px; display: block; }
+
+    .exp-meta {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 10px;
+      display: block;
+    }
 
     /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 30px; margin-top: 30px; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 24px 26px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
     .skill { margin-bottom: 12px; }
     .skill-name { font-size: 14px; margin-bottom: 6px; }
     .skill-bar { height: 8px; background: #e5e7eb; border-radius: 6px; }
     .skill-fill { height: 100%; background: #ff7a18; border-radius: 6px; }
 
+    /* PROJECT / EDUCATION / ACHIEVEMENT CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px 26px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
     /* RESUME */
     .resume-frame {
-      height: 60vh; margin-bottom: 24px; border-radius: 12px;
-      overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      height: 60vh;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
-    .resume-actions { display: flex; gap: 20px; }
+
+    .resume-actions {
+      display: flex;
+      gap: 20px;
+    }
+
     .resume-actions a {
-      padding: 12px 28px; border-radius: 30px;
-      font-weight: 600; text-decoration: none; cursor: pointer;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
     }
-    .preview-btn { background: #ff7a18; color: white; }
-    .download-btn { border: 2px solid #ff7a18; color: #ff7a18; }
-    .download-btn:hover { background: #ff7a18; color: white; }
+
+    .preview-btn {
+      background: #ff7a18;
+      color: white;
+    }
+
+    .download-btn {
+      border: 2px solid #ff7a18;
+      color: #ff7a18;
+    }
+
+    .download-btn:hover {
+      background: #ff7a18;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="brand"><span>Lakshmi Teja Kumar</span></div>
+  <div class="brand">
+    <span>Lakshmi Teja Kumar</span>
+  </div>
+
   <nav>
     <a onclick="show('home')">Home</a>
     <a onclick="show('about')">About Me</a>
@@ -133,129 +301,238 @@
 </header>
 
 <div class="app">
-<div class="content">
 
-<!-- HOME -->
-<section id="home" class="page active">
-  <div class="welcome">WELCOME</div>
-  <h1>Hi, I'm Lakshmi Teja Kumar</h1>
-  <h2>Data Analyst & Power BI Developer</h2>
-  <p>
-    Enterprise Data Analyst with 4 years of professional experience delivering
-    scalable business intelligence solutions, KPI-driven dashboards, and
-    data-backed insights. Known for bridging the gap between business needs
-    and analytical solutions through strong stakeholder collaboration and
-    technical expertise.
-  </p>
-  <a class="contact-btn" onclick="show('contact')">Contact Me</a>
-</section>
+  <div class="content">
 
-<!-- ABOUT (UNCHANGED) -->
-<section id="about" class="page">
-  <!-- ORIGINAL ABOUT CONTENT EXACTLY AS BEFORE -->
-  ... <!-- (intentionally unchanged, already validated above) -->
-</section>
+    <!-- HOME (ORIGINAL – UNTOUCHED) -->
+    <section id="home" class="page active">
+      <div class="welcome">WELCOME</div>
+      <h1>Hi, I'm Lakshmi Teja Kumar</h1>
+      <h2>Data Analyst & Power BI Developer</h2>
+      <p>
+        Enterprise Data Analyst with 4 years of professional experience delivering
+        scalable business intelligence solutions, KPI-driven dashboards, and
+        data-backed insights. Known for bridging the gap between business needs
+        and analytical solutions through strong stakeholder collaboration and
+        technical expertise.
+      </p>
+      <a class="contact-btn" onclick="show('contact')">Contact Me</a>
+    </section>
 
-<!-- EXPERIENCE, SKILLS -->
-<!-- (UNCHANGED FROM LAST CONFIRMED VERSION) -->
+    <!-- ABOUT (ORIGINAL – UNTOUCHED) -->
+    <section id="about" class="page">
+      <h1>About Me</h1>
+      <p>
+        I am a data professional with 4 years of hands-on experience, most recently
+        working as a Data Analyst (Power BI Developer) at NIQ, a global market
+        research organization with over a century of industry presence.
+      </p>
+      <p>
+        I have strong experience across the complete analytics lifecycle,
+        including requirement gathering, data preparation, dashboard development,
+        and insight delivery. I regularly collaborated with stakeholders to define
+        KPIs and translate business problems into scalable analytical solutions.
+      </p>
+      <p>
+        My approach combines solid business and administrative understanding with
+        technical expertise, enabling me to design analytics solutions that are
+        both practical and impactful.
+      </p>
 
-<!-- PROJECTS -->
-<section id="projects" class="page">
-  <h1>Projects</h1>
-
-  <div class="card-grid">
-    <div class="card">
-      <h3>Enterprise KPI Dashboard</h3>
-      <small>Power BI | DAX | SQL Server</small>
+      <h3>Key Responsibilities</h3>
       <ul>
-        <li>Designed executive dashboards tracking sales, margin, and churn.</li>
-        <li>Implemented semantic models and RLS for secure reporting.</li>
-        <li>Reduced manual reporting effort by 30%.</li>
+        <li>Data gathering and consolidation from multiple sources</li>
+        <li>Stakeholder meetings to finalize business and reporting requirements</li>
+        <li>Data cleaning, transformation, and validation</li>
+        <li>Designing and developing Power BI dashboards</li>
+        <li>Enhancing dashboards using semantic models</li>
+        <li>Implementing Row-Level Security (RLS)</li>
       </ul>
-    </div>
 
-    <div class="card">
-      <h3>Supply Chain Performance Analysis</h3>
-      <small>Power BI | Power Query | Snowflake</small>
-      <ul>
-        <li>Integrated multi-source data for inventory and fulfillment metrics.</li>
-        <li>Optimized refresh cycles for 1M+ row datasets.</li>
-        <li>Improved visibility across operations teams.</li>
-      </ul>
-    </div>
+      <h3>Tools & Technologies</h3>
+      <p>
+        Power BI, Advanced Excel, DAX, Data Modelling, MySQL, SQL Server, SSMS,
+        VBA, Python, Tableau
+      </p>
 
-    <div class="card">
-      <h3>SQL Sales Trend Analysis</h3>
-      <small>SQL Server | MySQL</small>
-      <ul>
-        <li>Analyzed 3M+ rows to identify seasonal and regional trends.</li>
-        <li>Built reusable queries for reporting automation.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <h3>Domain Experience</h3>
+      <p>Market Research (NIQ) and Retail Analytics</p>
 
-<!-- EDUCATION -->
-<section id="education" class="page">
-  <h1>Education</h1>
+      <h3>Career Focus</h3>
+      <p>Data Analyst | Power BI Developer | Data Scientist</p>
+    </section>
 
-  <div class="experience-timeline">
-    <div class="exp-item">
-      <div class="exp-dot"></div>
-      <div class="exp-card">
-        <h3>MBA – Business Analytics</h3>
-        <span class="exp-meta">BITS | 2025 – 2027</span>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="page">
+      <h1>Experience</h1>
+
+      <div class="experience-timeline">
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <h3>Data Analyst – NIQ</h3>
+            <span class="exp-meta">Jan 2023 – Nov 2025 | Chennai</span>
+            <ul>
+              <li>Developed and maintained enterprise Power BI dashboards.</li>
+              <li>Integrated SQL Server, Excel, APIs, and Snowflake data.</li>
+              <li>Built complex DAX measures and KPI models.</li>
+              <li>Implemented RLS and optimized refresh strategies.</li>
+              <li>Worked closely with business stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <h3>Marketing & Regional Manager – MORE Retail</h3>
+            <span class="exp-meta">Oct 2021 – Aug 2022 | Tirupati</span>
+            <ul>
+              <li>Managed regional sales and marketing operations.</li>
+              <li>Built Excel dashboards for sales and footfall tracking.</li>
+              <li>Executed data-driven campaigns.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="exp-item">
-      <div class="exp-dot"></div>
-      <div class="exp-card">
-        <h3>BBA – Marketing</h3>
-        <span class="exp-meta">Emeralds Degree & PG College | 2018 – 2021</span>
+    <!-- SKILLS -->
+    <section id="skills" class="page">
+      <h1>Skills</h1>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Power BI & Analytics</h3>
+          <div class="skill"><div class="skill-name">Power BI Desktop / Service</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill"><div class="skill-name">DAX</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill"><div class="skill-name">Power Query</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill"><div class="skill-name">Data Modelling</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Databases & Automation</h3>
+          <div class="skill"><div class="skill-name">SQL Server / MySQL</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill"><div class="skill-name">Snowflake</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill"><div class="skill-name">Excel / VBA</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        </div>
       </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page">
+      <h1>Projects</h1>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Enterprise KPI Dashboard</h3>
+          <ul>
+            <li>Designed Power BI dashboards for executive KPI tracking.</li>
+            <li>Implemented semantic models and RLS.</li>
+            <li>Reduced manual reporting by 30%.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Supply Chain Analytics</h3>
+          <ul>
+            <li>Integrated multi-source data for operations analysis.</li>
+            <li>Optimized refresh for large datasets.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="page">
+      <h1>Education</h1>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>MBA – Business Analytics</h3>
+          <p>Birla Institute of Technology & Science (2025 – 2027)</p>
+        </div>
+
+        <div class="card">
+          <h3>BBA – Marketing</h3>
+          <p>Emeralds Degree & PG College (2018 – 2021)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="page">
+      <h1>Achievements</h1>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Overall Best Employee</h3>
+          <p>Recognized for consistent high-quality delivery.</p>
+        </div>
+
+        <div class="card">
+          <h3>Excellence in Quality & Productivity</h3>
+          <p>Maintained 94%+ data accuracy.</p>
+        </div>
+
+        <div class="card">
+          <h3>Most Innovative Employer of the Year</h3>
+          <p>Awarded for Power BI-driven innovation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (ORIGINAL) -->
+    <section id="contact" class="page">
+      <h1>Contact</h1>
+      <p><strong>Email:</strong> lakshmitejakumar.sriperumbuduru@gmail.com</p>
+      <p><strong>Phone:</strong> +91 7093008246</p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/lakshmitejakumar-sriperumbuduru-61475b2a8" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </section>
+
+    <!-- RESUME (ORIGINAL) -->
+    <section id="resume" class="page">
+      <h1>Resume</h1>
+
+      <div class="resume-frame">
+        <iframe src="sources/Lakshmi_Teja_Kumar.pdf" width="100%" height="100%" style="border:none;"></iframe>
+      </div>
+
+      <div class="resume-actions">
+        <a class="preview-btn"
+           onclick="document.querySelector('#resume iframe').scrollIntoView({behavior:'smooth'})">
+          Preview
+        </a>
+        <a class="download-btn" href="sources/Lakshmi_Teja_Kumar.pdf" download>
+          Download
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="profile">
+    <img src="sources/profile_new.png">
+    <div class="caption">
+      <div class="name">S. Lakshmi Teja Kumar</div>
+      <div class="degree">MBA in Business Analytics</div>
     </div>
   </div>
-</section>
 
-<!-- ACHIEVEMENTS -->
-<section id="achievements" class="page">
-  <h1>Achievements</h1>
-
-  <div class="card-grid">
-    <div class="card">
-      <h3>Overall Best Employee</h3>
-      <p>Recognized for consistent delivery of high-quality business insights.</p>
-    </div>
-
-    <div class="card">
-      <h3>Excellence in Quality & Productivity</h3>
-      <p>Maintained 94%+ data accuracy across weekly deliverables.</p>
-    </div>
-
-    <div class="card">
-      <h3>Most Innovative Employer of the Year</h3>
-      <p>Awarded for implementing creative Power BI-driven solutions.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT + RESUME (UNCHANGED) -->
-
-</div>
-
-<div class="profile">
-  <img src="sources/profile_new.png">
-  <div class="caption">
-    <div class="name">S. Lakshmi Teja Kumar</div>
-    <div class="degree">MBA in Business Analytics</div>
-  </div>
-</div>
 </div>
 
 <script>
   let lastIndex = 0;
   const navOrder = ['home','about','experience','skills','projects','education','achievements','contact','resume'];
+
   function show(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active','from-left'));
     const currentIndex = navOrder.indexOf(id);
