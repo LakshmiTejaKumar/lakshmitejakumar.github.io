@@ -277,6 +277,57 @@
       background: #ff7a18;
       color: white;
     }
+    /* EXPERIENCE ACCORDION */
+.exp-accordion {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.exp-header {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.exp-header:hover {
+  background: #f8fafc;
+}
+
+.exp-title {
+  font-weight: 600;
+}
+
+.exp-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.exp-toggle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff7a18;
+}
+
+.exp-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.exp-body.open {
+  max-height: 2000px;
+}
+
+.exp-body-inner {
+  padding: 0 22px 22px;
+}
+
   </style>
 </head>
 
@@ -363,41 +414,150 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="page">
-      <h1>Experience</h1>
+<section id="experience" class="page">
+  <h1>Experience</h1>
 
-      <div class="experience-timeline">
+  <!-- NIQ -->
+  <div class="exp-accordion">
+    <div class="exp-header" onclick="toggleExp(this)">
+      <div>
+        <div class="exp-title">NIQ — Data Analyst</div>
+        <div class="exp-subtitle">Jan 2023 – Nov 2025 | Chennai</div>
+      </div>
+      <div class="exp-toggle">Read more</div>
+    </div>
 
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-card">
-            <h3>Data Analyst – NIQ</h3>
-            <span class="exp-meta">Jan 2023 – Nov 2025 | Chennai</span>
-            <ul>
-              <li>Developed and maintained enterprise Power BI dashboards.</li>
-              <li>Integrated SQL Server, Excel, APIs, and Snowflake data.</li>
-              <li>Built complex DAX measures and KPI models.</li>
-              <li>Implemented RLS and optimized refresh strategies.</li>
-              <li>Worked closely with business stakeholders.</li>
-            </ul>
-          </div>
-        </div>
+    <div class="exp-body">
+      <div class="exp-body-inner">
 
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-card">
-            <h3>Marketing & Regional Manager – MORE Retail</h3>
-            <span class="exp-meta">Oct 2021 – Aug 2022 | Tirupati</span>
-            <ul>
-              <li>Managed regional sales and marketing operations.</li>
-              <li>Built Excel dashboards for sales and footfall tracking.</li>
-              <li>Executed data-driven campaigns.</li>
-            </ul>
-          </div>
-        </div>
+        <h3>Situation</h3>
+        <p>
+          Worked in an enterprise market research environment where supply chain,
+          finance, and operations teams relied on frequent and ad-hoc analytics.
+          Business questions were often ambiguous and data came from multiple
+          systems.
+        </p>
+
+        <h3>Task</h3>
+        <p>
+          My responsibility was to translate unclear business requirements into
+          reliable KPIs and scalable Power BI solutions while ensuring data
+          accuracy, performance, and security.
+        </p>
+
+        <h3>Action</h3>
+        <ul>
+          <li>
+            Integrated data from SQL Server, APIs, Excel files, and Snowflake into
+            Power BI, ensuring consistent schemas and refresh reliability.
+          </li>
+          <li>
+            Used SQL extensively to fetch, validate, and reconcile source data by
+            checking row counts, joins, aggregations, and business logic.
+          </li>
+          <li>
+            Leveraged query folding in Power Query to push transformations back to
+            source systems, improving refresh performance and scalability.
+          </li>
+          <li>
+            Validated Power BI outputs against SQL query results to ensure KPIs
+            matched source-of-truth values.
+          </li>
+          <li>
+            Built reusable and optimized DAX measures for profitability,
+            operational efficiency, and performance tracking.
+          </li>
+          <li>
+            Implemented Row-Level Security (RLS) and optimized refresh strategies
+            for secure and scalable reporting.
+          </li>
+        </ul>
+
+        <h3>Result</h3>
+        <ul>
+          <li>Reduced dependency on manual and ad-hoc reporting.</li>
+          <li>Improved KPI consistency across multiple business teams.</li>
+          <li>Enabled self-service analytics and faster decision-making.</li>
+        </ul>
 
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- MORE Retail -->
+  <div class="exp-accordion">
+    <div class="exp-header" onclick="toggleExp(this)">
+      <div>
+        <div class="exp-title">MORE Retail — Marketing & Regional Manager</div>
+        <div class="exp-subtitle">Oct 2021 – Aug 2022 | Tirupati</div>
+      </div>
+      <div class="exp-toggle">Read more</div>
+    </div>
+
+    <div class="exp-body">
+      <div class="exp-body-inner">
+
+        <h3>Situation</h3>
+        <p>
+          Sales at the store had stagnated for multiple years despite consistent
+          customer footfall. Inventory wastage, especially vegetables, was
+          increasing due to overstocking.
+        </p>
+
+        <h3>Task</h3>
+        <p>
+          Identify the root cause of stagnant sales, reduce dumping costs, and
+          improve overall store profitability using available operational data.
+        </p>
+
+        <h3>Action</h3>
+        <ul>
+          <li>
+            Extracted sales and customer data from Oracle and SAP systems and
+            built an Excel-based dashboard using advanced Excel and Pivot Tables.
+          </li>
+          <li>
+            Defined KPIs such as monthly and daily sales, footfall count, bill
+            value per customer, frequent customers, and customer location radius.
+          </li>
+          <li>
+            Analyzed customer purchasing behavior and identified that customers
+            within a 2 km radius were visiting frequently and driving most sales.
+          </li>
+          <li>
+            Used purchase frequency analysis to optimize indent planning,
+            especially for perishable items like vegetables.
+          </li>
+          <li>
+            Reduced over-ordering and dumping costs, and redirected savings into
+            targeted advertisements and offers to attract customers outside the
+            2 km radius.
+          </li>
+        </ul>
+
+        <h3>Result</h3>
+        <ul>
+          <li>Significant reduction in dumping costs for perishable goods.</li>
+          <li>Improved inventory efficiency and indent accuracy.</li>
+          <li>Increase in sales through targeted promotions and offers.</li>
+          <li>
+            Store layout and analysis approach continued to be used as a reference
+            model.
+          </li>
+        </ul>
+
+        <h3>Achievement</h3>
+        <p>
+          Awarded <strong>Youngest Manager Award</strong> for driving measurable
+          business improvement using data-driven decision-making.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
 
     <!-- SKILLS -->
     <section id="skills" class="page">
@@ -542,7 +702,27 @@
     lastIndex = currentIndex;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-</script>
 
+  // 👇 ADD THIS BELOW — DO NOT DELETE ANYTHING ABOVE
+  function toggleExp(header) {
+    const allBodies = document.querySelectorAll('.exp-body');
+    const allToggles = document.querySelectorAll('.exp-toggle');
+
+    const body = header.nextElementSibling;
+    const toggleText = header.querySelector('.exp-toggle');
+
+    allBodies.forEach(b => {
+      if (b !== body) b.classList.remove('open');
+    });
+
+    allToggles.forEach(t => {
+      if (t !== toggleText) t.textContent = 'Read more';
+    });
+
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    toggleText.textContent = isOpen ? 'Read more' : 'Read less';
+  }
+</script>
 </body>
 </html>
